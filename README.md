@@ -273,7 +273,7 @@ flowchart TB
 | Android and APIs need their own drivers | Two small MCP servers in plain Node, no dependencies; credentials never reach the model |
 | "It works on my demo" | Evals with hidden mistakes and hand-made answer keys, scored for what it found and what it wrongly claimed |
 
-**190 automated tests**, CI on Windows, macOS and Linux; all live eval runs together cost about $15.
+**209 automated tests**, CI on Windows, macOS and Linux; all live eval runs together cost about $17.
 📖 **[The full story, including what went wrong](docs/BUILT-WITH-CLAUDE-CODE.md)** ·
 [technical guide](docs/TECHNICAL.md) · [design decisions](docs/adr/) · [changelog](CHANGELOG.md)
 

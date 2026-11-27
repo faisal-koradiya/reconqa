@@ -28,7 +28,7 @@ and reconcile plans, scoring. The model is used only where judgment is needed.
 
 ## How it was tested
 
-- **190 automated tests**, run in CI on Windows, macOS and Linux with Node 20 and 22. The drivers
+- **209 automated tests**, run in CI on Windows, macOS and Linux with Node 20 and 22. The drivers
   are tested with a fake adb and a fake HTTP server, so CI needs no phone and no network.
 - **Evals with hidden mistakes.** For each test I wrote an answer key before any AI run: outdated
   cases hidden among 100 old ones, wrong lines in a manual, mistakes in tickets and an API spec,
@@ -40,7 +40,7 @@ and reconcile plans, scoring. The model is used only where judgment is needed.
   had not created, and logcat could return other apps' logs. All 10 were fixed with a test each
   before moving on.
 
-Live eval runs together cost about $15 at API prices; each was capped.
+Live eval runs together cost about $17 at API prices; each was capped.
 
 ## What went wrong, and what I changed
 
