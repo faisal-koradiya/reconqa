@@ -16,8 +16,8 @@ An AI helper for testers. No coding needed. Made for people new to QA or new to 
 
 </div>
 
-<p align="center"><img src="docs/media/story.gif" alt="ReconQA on a practice shop app: it looks at the app, reads 100 old test cases and lists the ones that no longer match, keeps the team's answer, then writes test cases for a new ticket, runs them, and writes a bug report that it sends only after asking." width="900"></p>
-<p align="center"><em>Everything in this animation is real output from the practice example in this project.</em></p>
+<p align="center"><img src="docs/media/story.gif" alt="A 50-second tour: ReconQA looks at a website, an Android app and an API and copies their exact messages; finds all 12 outdated cases among 100 old ones; borrows messages from a similar screen before a new screen is built (3 of 4 exactly right); runs 14 cases (13 pass, 1 real bug with a screenshot); extreme mode finds real problems on all three apps; and asks before sending anything to GitHub, Jira or TestRail." width="900"></p>
+<p align="center"><em>Every message, number and finding in this animation comes from real runs on public practice apps in this project; the approval question is an example of its wording.</em></p>
 
 > **🟢 Want to try it?** You install 3 free programs; the [user guide](docs/USER-GUIDE.md) shows
 > every click for Mac and Windows (about 20 minutes, once). Your first try uses a practice app, so
