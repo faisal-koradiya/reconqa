@@ -1,0 +1,11 @@
+{
+  "secs": 237,
+  "turns": 58,
+  "cost_usd": 0.33815019999999996,
+  "cache_read": 1573642,
+  "cache_write": 29016,
+  "output": 6453,
+  "result": "I mapped both habit types, but only partly. Several fields and pickers were not probed, and the Measurable frequency dialog was not opened.\n\n**Atlas page:** `qa/atlas/creating-a-habit.md`, under the run directory. I could not list the adapter folder (Bash was denied) and the Android adapter file wasn't at the path given. I used the Android tool names directly.\n\n- **Screens (5):**\n  - Intro\n  - Habits list\n  - Habit type dialog\n  - Create habit (Yes or No)\n  - Create habit (Measurable)\n\n  The Yes or No frequency dialog is recorded as part of its screen.\n- **Messages (2):** \"Cannot be blank\" on Name (Yes or No) and \"Cannot be blank\" on Target (Measurable). The error is only an icon until you tap the field.\n- **Rules (5):**\n  - Name is required.\n  - Target is required for Measurable.\n  - Question is optional.\n  - Save returns to the Habits list with no toast.\n  - Setting \"times per week\" to",
+  "model": "sonnet",
+  "note": "Before the driver_guide fix: the model did not find the Android guide."
+}

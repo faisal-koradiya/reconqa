@@ -1,0 +1,51 @@
+{
+  "_about": "Tool map for Atlassian's remote MCP server (Jira part), used by the write gate. Tool names from Atlassian's public MCP documentation. Any tool on the tracker server that is not listed here is denied (including Confluence tools and the generic execute tools).",
+  "default_prefix": "mcp__atlassian__",
+  "target_fields": {
+    "project": [
+      "projectKey"
+    ],
+    "issue_key": [
+      "issueIdOrKey",
+      "issueKey"
+    ],
+    "site": [
+      "cloudId"
+    ]
+  },
+  "assignee_fields": [
+    "assignee_account_id",
+    "assigneeAccountId",
+    "assignee"
+  ],
+  "reads": [
+    "getJiraIssue",
+    "searchJiraIssuesUsingJql",
+    "getVisibleJiraProjects",
+    "getJiraProjectIssueTypesMetadata",
+    "getJiraIssueTypeMetaWithFields",
+    "getTransitionsForJiraIssue",
+    "getJiraIssueRemoteIssueLinks",
+    "getIssueLinkTypes",
+    "listJiraIssueComments",
+    "atlassianUserInfo",
+    "getAccessibleAtlassianResources",
+    "lookupJiraAccountId",
+    "search",
+    "fetch"
+  ],
+  "writes": [
+    "createJiraIssue",
+    "editJiraIssue",
+    "addCommentToJiraIssue",
+    "addOrEditJiraIssueComment"
+  ],
+  "deletes": [
+    "transitionJiraIssue",
+    "addWorklogToJiraIssue",
+    "createIssueLink",
+    "executeWrite",
+    "executeDestructive"
+  ],
+  "tested_with": "public tool list of Atlassian's remote MCP server (2026-11); not yet live-tested"
+}

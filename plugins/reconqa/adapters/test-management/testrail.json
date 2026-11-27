@@ -1,0 +1,10 @@
+{
+  "_about": "Tool map for ReconQA's built-in TestRail helper (drivers/testrail/server.mjs), used by the write gate. Any tool on this server that is not listed is denied. Uploads take only a batch id from a preview the user has seen; the helper only adds cases, runs and results.",
+  "default_prefix": "mcp__reconqa-testrail__",
+  "target": "test-management",
+  "allow": ["testrail_info", "testrail_preview_cases", "testrail_preview_results"],
+  "ask": ["testrail_upload"],
+  "ask_reasons": { "testrail_upload": "sends the previewed batch to TestRail (adds cases, or a test run with results). Check the batch id matches the preview you agreed to" },
+  "deny": [],
+  "tested_with": "reconqa-testrail 0.1.0 (built in); TestRail API v2 from the public docs, not yet live-tested"
+}

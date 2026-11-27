@@ -1,0 +1,9 @@
+{
+  "cmd": "/reconqa:run-cases qa/cases/measurable-habits.md TC-MEAS-001 TC-MEAS-004 TC-MEAS-006 TC-MEAS-007 TC-MEAS-010",
+  "model": "sonnet",
+  "secs": 149,
+  "turns": 54,
+  "cost_usd": 0.44451879999999994,
+  "output": 7088,
+  "result": "I ran 5 cases: 4 passed, 0 failed and 1 blocked. The report check passed.\n\n- **TC-MEAS-001, 004, 006 and 007:** passed. All texts matched exactly and the habit saved.\n- **TC-MEAS-006 note:** the «Name» field also showed an error icon because it was empty too. The case only checks «Target».\n- **TC-MEAS-010:** blocked at step 1. TalkBack isn't on, and the driver can't turn it on or hear what it says. The snapshot shows the Color button with no label, which fits mismatch row 5, but that isn't a spoken-label check. To run this case you'd have to do it by hand with TalkBack on.\n\nFor TC-MEAS-007 I used the fresh name `reconqa-31c5f56f` instead of the example `reconqa Run`. That habit is still on the emulator. The Create habit form is also still open from the TC-MEAS-010 screenshot.\n\nI tapped one guessed screen point by mistake. It changed nothing, since the list looked the same afterwards.\n\nThe app is version 2.3.2 (20302) on Android 15 (emulator-5554). No knowledge base exists, so there are no known issues to match. No bugs need drafting from failures. If you want a bug for the unlabeled Color button, `/reconqa:draft-bug TC-MEAS-010 step 1` would work, though that step is blocked rather than failed.\n\nFiles are in `qa/runs/`:\n- `measurable-habits-2026-11-27.md`\n- `measurable-habits-2026-11-27.csv`\n- `shots/measurable-habits-2026-11-27/TC-MEAS-006-step1.png` and `TC-MEAS-010-step1.png`"
+}

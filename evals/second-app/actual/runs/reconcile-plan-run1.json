@@ -1,0 +1,181 @@
+{
+  "cases": "qa/cases/recurring-bills-pre-ui.md",
+  "pages": [
+    "schedules"
+  ],
+  "items": [
+    {
+      "n": 1,
+      "line": 30,
+      "raw": "‹expected: Add new schedule [src: ticket:tickets/recurring-bills.md#AC1]›",
+      "text": "Add new schedule",
+      "src": "ticket:tickets/recurring-bills.md#AC1",
+      "group": "confirmed",
+      "how": "exact",
+      "atlas_text": "Add new schedule",
+      "atlas_ref": "atlas:schedules#Schedules list"
+    },
+    {
+      "n": 2,
+      "line": 31,
+      "raw": "‹expected: Add new schedule [src: ticket:tickets/recurring-bills.md#AC1]›",
+      "text": "Add new schedule",
+      "src": "ticket:tickets/recurring-bills.md#AC1",
+      "group": "confirmed",
+      "how": "exact",
+      "atlas_text": "Add new schedule",
+      "atlas_ref": "atlas:schedules#Schedules list"
+    },
+    {
+      "n": 3,
+      "line": 41,
+      "raw": "‹expected: Add [src: ticket:tickets/recurring-bills.md#AC2]›",
+      "text": "Add",
+      "src": "ticket:tickets/recurring-bills.md#AC2",
+      "group": "confirmed",
+      "how": "exact",
+      "atlas_text": "Add",
+      "atlas_ref": "atlas:schedules#Schedule dialog (add) — modal over /schedules"
+    },
+    {
+      "n": 4,
+      "line": 52,
+      "raw": "‹expected: Add [src: ticket:tickets/recurring-bills.md#AC2]›",
+      "text": "Add",
+      "src": "ticket:tickets/recurring-bills.md#AC2",
+      "group": "confirmed",
+      "how": "exact",
+      "atlas_text": "Add",
+      "atlas_ref": "atlas:schedules#Schedule dialog (add) — modal over /schedules"
+    },
+    {
+      "n": 5,
+      "line": 64,
+      "raw": "‹expected: Add [src: ticket:tickets/recurring-bills.md#AC2]›",
+      "text": "Add",
+      "src": "ticket:tickets/recurring-bills.md#AC2",
+      "group": "confirmed",
+      "how": "exact",
+      "atlas_text": "Add",
+      "atlas_ref": "atlas:schedules#Schedule dialog (add) — modal over /schedules"
+    },
+    {
+      "n": 6,
+      "line": 75,
+      "raw": "‹expected: Repeats [src: ticket:tickets/recurring-bills.md#AC3]›",
+      "text": "Repeats",
+      "src": "ticket:tickets/recurring-bills.md#AC3",
+      "group": "confirmed",
+      "how": "exact",
+      "atlas_text": "Repeats",
+      "atlas_ref": "atlas:schedules#Schedule dialog (add) — modal over /schedules"
+    },
+    {
+      "n": 7,
+      "line": 111,
+      "raw": "‹expected: Add [src: ticket:tickets/recurring-bills.md#AC2]›",
+      "text": "Add",
+      "src": "ticket:tickets/recurring-bills.md#AC2",
+      "group": "confirmed",
+      "how": "exact",
+      "atlas_text": "Add",
+      "atlas_ref": "atlas:schedules#Schedule dialog (add) — modal over /schedules"
+    },
+    {
+      "n": 8,
+      "line": 124,
+      "raw": "‹expected: Add [src: ticket:tickets/recurring-bills.md#AC2]›",
+      "text": "Add",
+      "src": "ticket:tickets/recurring-bills.md#AC2",
+      "group": "confirmed",
+      "how": "exact",
+      "atlas_text": "Add",
+      "atlas_ref": "atlas:schedules#Schedule dialog (add) — modal over /schedules"
+    },
+    {
+      "n": 9,
+      "line": 134,
+      "raw": "‹expected: Automatically add transaction [src: ticket:tickets/recurring-bills.md#AC6]›",
+      "text": "Automatically add transaction",
+      "src": "ticket:tickets/recurring-bills.md#AC6",
+      "group": "confirmed",
+      "how": "exact",
+      "atlas_text": "Automatically add transaction",
+      "atlas_ref": "atlas:schedules#Schedule dialog (add) — modal over /schedules"
+    },
+    {
+      "n": 10,
+      "line": 145,
+      "raw": "‹expected: is about [src: ticket:tickets/recurring-bills.md#AC7]›",
+      "text": "is about",
+      "src": "ticket:tickets/recurring-bills.md#AC7",
+      "group": "different",
+      "how": "similar",
+      "atlas_text": "is approximately",
+      "atlas_ref": "atlas:schedules#Schedule dialog (add) — modal over /schedules",
+      "review": {
+        "group": "different",
+        "atlas_text": "is approximately",
+        "atlas_ref": "atlas:schedules#Schedule dialog (add) — modal over /schedules",
+        "note": "Ticket AC7 says the approximate option is labelled \"is about\" but the screen shows \"is approximately\": change the screen, or update the ticket?"
+      },
+      "near": [
+        {
+          "text": "is approximately",
+          "ref": "atlas:schedules#Schedule dialog (add) — modal over /schedules",
+          "score": 0.5
+        },
+        {
+          "text": "is exactly",
+          "ref": "atlas:schedules#Other dialog controls (second pass)",
+          "score": 0.5
+        },
+        {
+          "text": "is between",
+          "ref": "atlas:schedules#Other dialog controls (second pass)",
+          "score": 0.5
+        }
+      ]
+    },
+    {
+      "n": 11,
+      "line": 167,
+      "raw": "‹expected: Due date [src: ticket:tickets/recurring-bills.md#AC8]›",
+      "text": "Due date",
+      "src": "ticket:tickets/recurring-bills.md#AC8",
+      "group": "different",
+      "how": "similar",
+      "atlas_text": "Date",
+      "atlas_ref": "atlas:schedules#Schedule dialog (add) — modal over /schedules",
+      "review": {
+        "group": "different",
+        "atlas_text": "Next date",
+        "atlas_ref": "atlas:schedules#Schedules list",
+        "note": "Ticket AC8 says the list column is headed \"Due date\" but the screen's column is \"Next date\": change the screen, or update the ticket?"
+      },
+      "near": [
+        {
+          "text": "Date",
+          "ref": "atlas:schedules#Schedule dialog (add) — modal over /schedules",
+          "score": 0.67
+        },
+        {
+          "text": "Due",
+          "ref": "atlas:schedules#Schedule dialog (add) — modal over /schedules",
+          "score": 0.67
+        },
+        {
+          "text": "Start Date",
+          "ref": "atlas:schedules#Date popup (second pass) — popover over the Schedule dialog",
+          "score": 0.5
+        }
+      ]
+    }
+  ],
+  "counts": {
+    "total": 11,
+    "confirmed": 9,
+    "different": 2,
+    "not_found": 0
+  }
+}

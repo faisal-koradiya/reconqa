@@ -1,0 +1,552 @@
+{
+  "date": "2026-11-26",
+  "model": "sonnet",
+  "results": [
+    {
+      "ticket": "kb-01-password-policy.md",
+      "cond": "with-kb",
+      "run": 1,
+      "file": "kb-01-password-policy-with-kb-r1.md",
+      "secs": 46,
+      "cost_usd": 0.25142509999999996,
+      "score": [
+        {
+          "ac": 1,
+          "kind": "decision",
+          "id": "D3",
+          "asked": false,
+          "answered": true
+        },
+        {
+          "ac": 2,
+          "kind": "known-issue",
+          "id": "K1",
+          "asked": false,
+          "answered": true
+        }
+      ]
+    },
+    {
+      "ticket": "kb-01-password-policy.md",
+      "cond": "with-kb",
+      "run": 2,
+      "file": "kb-01-password-policy-with-kb-r2.md",
+      "secs": 45,
+      "cost_usd": 0.2290443,
+      "score": [
+        {
+          "ac": 1,
+          "kind": "decision",
+          "id": "D3",
+          "asked": true,
+          "answered": true
+        },
+        {
+          "ac": 2,
+          "kind": "known-issue",
+          "id": "K1",
+          "asked": false,
+          "answered": true
+        }
+      ]
+    },
+    {
+      "ticket": "kb-01-password-policy.md",
+      "cond": "with-kb",
+      "run": 3,
+      "file": "kb-01-password-policy-with-kb-r3.md",
+      "secs": 41,
+      "cost_usd": 0.2280228,
+      "score": [
+        {
+          "ac": 1,
+          "kind": "decision",
+          "id": "D3",
+          "asked": false,
+          "answered": true
+        },
+        {
+          "ac": 2,
+          "kind": "known-issue",
+          "id": "K1",
+          "asked": false,
+          "answered": true
+        }
+      ]
+    },
+    {
+      "ticket": "kb-01-password-policy.md",
+      "cond": "without-kb",
+      "run": 1,
+      "file": "kb-01-password-policy-without-kb-r1.md",
+      "secs": 49,
+      "cost_usd": 0.23874629999999997,
+      "score": [
+        {
+          "ac": 1,
+          "kind": "decision",
+          "id": "D3",
+          "asked": true,
+          "answered": false
+        },
+        {
+          "ac": 2,
+          "kind": "known-issue",
+          "id": "K1",
+          "asked": true,
+          "answered": false
+        }
+      ]
+    },
+    {
+      "ticket": "kb-02-registration-flow.md",
+      "cond": "with-kb",
+      "run": 1,
+      "file": "kb-02-registration-flow-with-kb-r1.md",
+      "secs": 33,
+      "cost_usd": 0.2008073,
+      "score": [
+        {
+          "ac": 1,
+          "kind": "decision",
+          "id": "D1",
+          "asked": false,
+          "answered": true
+        },
+        {
+          "ac": 2,
+          "kind": "decision",
+          "id": "D2",
+          "asked": false,
+          "answered": true
+        },
+        {
+          "ac": 3,
+          "kind": "decision",
+          "id": "D4",
+          "asked": false,
+          "answered": true
+        }
+      ]
+    },
+    {
+      "ticket": "kb-02-registration-flow.md",
+      "cond": "with-kb",
+      "run": 2,
+      "file": "kb-02-registration-flow-with-kb-r2.md",
+      "secs": 30,
+      "cost_usd": 0.19992379999999998,
+      "score": [
+        {
+          "ac": 1,
+          "kind": "decision",
+          "id": "D1",
+          "asked": false,
+          "answered": true
+        },
+        {
+          "ac": 2,
+          "kind": "decision",
+          "id": "D2",
+          "asked": false,
+          "answered": true
+        },
+        {
+          "ac": 3,
+          "kind": "decision",
+          "id": "D4",
+          "asked": false,
+          "answered": true
+        }
+      ]
+    },
+    {
+      "ticket": "kb-02-registration-flow.md",
+      "cond": "with-kb",
+      "run": 3,
+      "file": "kb-02-registration-flow-with-kb-r3.md",
+      "secs": 32,
+      "cost_usd": 0.19912440000000003,
+      "score": [
+        {
+          "ac": 1,
+          "kind": "decision",
+          "id": "D1",
+          "asked": false,
+          "answered": true
+        },
+        {
+          "ac": 2,
+          "kind": "decision",
+          "id": "D2",
+          "asked": false,
+          "answered": true
+        },
+        {
+          "ac": 3,
+          "kind": "decision",
+          "id": "D4",
+          "asked": false,
+          "answered": true
+        }
+      ]
+    },
+    {
+      "ticket": "kb-02-registration-flow.md",
+      "cond": "without-kb",
+      "run": 1,
+      "file": "kb-02-registration-flow-without-kb-r1.md",
+      "secs": 56,
+      "cost_usd": 0.2620915,
+      "score": [
+        {
+          "ac": 1,
+          "kind": "decision",
+          "id": "D1",
+          "asked": false,
+          "answered": false
+        },
+        {
+          "ac": 2,
+          "kind": "decision",
+          "id": "D2",
+          "asked": true,
+          "answered": false
+        },
+        {
+          "ac": 3,
+          "kind": "decision",
+          "id": "D4",
+          "asked": true,
+          "answered": false
+        }
+      ]
+    },
+    {
+      "ticket": "kb-03-security-questions.md",
+      "cond": "with-kb",
+      "run": 1,
+      "file": "kb-03-security-questions-with-kb-r1.md",
+      "secs": 39,
+      "cost_usd": 0.21941950000000002,
+      "score": [
+        {
+          "ac": 1,
+          "kind": "decision",
+          "id": "D5",
+          "asked": false,
+          "answered": true
+        }
+      ]
+    },
+    {
+      "ticket": "kb-03-security-questions.md",
+      "cond": "with-kb",
+      "run": 2,
+      "file": "kb-03-security-questions-with-kb-r2.md",
+      "secs": 39,
+      "cost_usd": 0.23722950000000004,
+      "score": [
+        {
+          "ac": 1,
+          "kind": "decision",
+          "id": "D5",
+          "asked": false,
+          "answered": true
+        }
+      ]
+    },
+    {
+      "ticket": "kb-03-security-questions.md",
+      "cond": "with-kb",
+      "run": 3,
+      "file": "kb-03-security-questions-with-kb-r3.md",
+      "secs": 37,
+      "cost_usd": 0.20885450000000003,
+      "score": [
+        {
+          "ac": 1,
+          "kind": "decision",
+          "id": "D5",
+          "asked": false,
+          "answered": true
+        }
+      ]
+    },
+    {
+      "ticket": "kb-03-security-questions.md",
+      "cond": "without-kb",
+      "run": 1,
+      "file": "kb-03-security-questions-without-kb-r1.md",
+      "secs": 40,
+      "cost_usd": 0.2086486,
+      "score": [
+        {
+          "ac": 1,
+          "kind": "decision",
+          "id": "D5",
+          "asked": true,
+          "answered": false
+        }
+      ]
+    },
+    {
+      "ticket": "kb-04-login-errors.md",
+      "cond": "with-kb",
+      "run": 1,
+      "file": "kb-04-login-errors-with-kb-r1.md",
+      "secs": 50,
+      "cost_usd": 0.2381564,
+      "score": [
+        {
+          "ac": 1,
+          "kind": "decision",
+          "id": "D6",
+          "asked": false,
+          "answered": true
+        }
+      ]
+    },
+    {
+      "ticket": "kb-04-login-errors.md",
+      "cond": "with-kb",
+      "run": 2,
+      "file": "kb-04-login-errors-with-kb-r2.md",
+      "secs": 46,
+      "cost_usd": 0.2465057,
+      "score": [
+        {
+          "ac": 1,
+          "kind": "decision",
+          "id": "D6",
+          "asked": false,
+          "answered": true
+        }
+      ]
+    },
+    {
+      "ticket": "kb-04-login-errors.md",
+      "cond": "with-kb",
+      "run": 3,
+      "file": "kb-04-login-errors-with-kb-r3.md",
+      "secs": 44,
+      "cost_usd": 0.2294061,
+      "score": [
+        {
+          "ac": 1,
+          "kind": "decision",
+          "id": "D6",
+          "asked": false,
+          "answered": true
+        }
+      ]
+    },
+    {
+      "ticket": "kb-04-login-errors.md",
+      "cond": "without-kb",
+      "run": 1,
+      "file": "kb-04-login-errors-without-kb-r1.md",
+      "secs": 44,
+      "cost_usd": 0.22715490000000002,
+      "score": [
+        {
+          "ac": 1,
+          "kind": "decision",
+          "id": "D6",
+          "asked": true,
+          "answered": false
+        }
+      ]
+    },
+    {
+      "ticket": "kb-05-registration-review.md",
+      "cond": "with-kb",
+      "run": 1,
+      "file": "kb-05-registration-review-with-kb-r1.md",
+      "secs": 43,
+      "cost_usd": 0.23790949999999997,
+      "score": [
+        {
+          "ac": 1,
+          "kind": "decision",
+          "id": "D2",
+          "asked": false,
+          "answered": true
+        },
+        {
+          "ac": 2,
+          "kind": "decision",
+          "id": "D3",
+          "asked": false,
+          "answered": true
+        },
+        {
+          "ac": 3,
+          "kind": "decision",
+          "id": "D1",
+          "asked": false,
+          "answered": true
+        },
+        {
+          "ac": 4,
+          "kind": "known-issue",
+          "id": "K1",
+          "asked": false,
+          "answered": true
+        }
+      ]
+    },
+    {
+      "ticket": "kb-05-registration-review.md",
+      "cond": "with-kb",
+      "run": 2,
+      "file": "kb-05-registration-review-with-kb-r2.md",
+      "secs": 47,
+      "cost_usd": 0.2499128,
+      "score": [
+        {
+          "ac": 1,
+          "kind": "decision",
+          "id": "D2",
+          "asked": false,
+          "answered": true
+        },
+        {
+          "ac": 2,
+          "kind": "decision",
+          "id": "D3",
+          "asked": true,
+          "answered": true
+        },
+        {
+          "ac": 3,
+          "kind": "decision",
+          "id": "D1",
+          "asked": false,
+          "answered": true
+        },
+        {
+          "ac": 4,
+          "kind": "known-issue",
+          "id": "K1",
+          "asked": false,
+          "answered": true
+        }
+      ]
+    },
+    {
+      "ticket": "kb-05-registration-review.md",
+      "cond": "with-kb",
+      "run": 3,
+      "file": "kb-05-registration-review-with-kb-r3.md",
+      "secs": 40,
+      "cost_usd": 0.22897209999999998,
+      "score": [
+        {
+          "ac": 1,
+          "kind": "decision",
+          "id": "D2",
+          "asked": false,
+          "answered": true
+        },
+        {
+          "ac": 2,
+          "kind": "decision",
+          "id": "D3",
+          "asked": false,
+          "answered": true
+        },
+        {
+          "ac": 3,
+          "kind": "decision",
+          "id": "D1",
+          "asked": false,
+          "answered": true
+        },
+        {
+          "ac": 4,
+          "kind": "known-issue",
+          "id": "K1",
+          "asked": false,
+          "answered": true
+        }
+      ]
+    },
+    {
+      "ticket": "kb-05-registration-review.md",
+      "cond": "without-kb",
+      "run": 1,
+      "file": "kb-05-registration-review-without-kb-r1.md",
+      "secs": 71,
+      "cost_usd": 0.30456190000000005,
+      "score": [
+        {
+          "ac": 1,
+          "kind": "decision",
+          "id": "D2",
+          "asked": true,
+          "answered": false
+        },
+        {
+          "ac": 2,
+          "kind": "decision",
+          "id": "D3",
+          "asked": true,
+          "answered": false
+        },
+        {
+          "ac": 3,
+          "kind": "decision",
+          "id": "D1",
+          "asked": true,
+          "answered": false
+        },
+        {
+          "ac": 4,
+          "kind": "known-issue",
+          "id": "K1",
+          "asked": true,
+          "answered": false
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "with-kb": {
+      "runs": 15,
+      "points": 33,
+      "asked": 2,
+      "answered": 33,
+      "cost": 3.4047138,
+      "perRun": []
+    },
+    "without-kb": {
+      "runs": 5,
+      "points": 11,
+      "asked": 10,
+      "answered": 0,
+      "cost": 1.2412032000000002,
+      "perRun": []
+    },
+    "with_kb_by_run": [
+      {
+        "run": 1,
+        "points": 11,
+        "asked": 0,
+        "answered": 11
+      },
+      {
+        "run": 2,
+        "points": 11,
+        "asked": 2,
+        "answered": 11
+      },
+      {
+        "run": 3,
+        "points": 11,
+        "asked": 0,
+        "answered": 11
+      }
+    ]
+  }
+}

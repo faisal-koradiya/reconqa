@@ -1,0 +1,224 @@
+{
+  "cases": "qa/cases/change-password.md",
+  "pages": [
+    "change-password"
+  ],
+  "items": [
+    {
+      "n": 1,
+      "line": 31,
+      "raw": "‹expected: Current Password [src: ticket:tickets/change-password.md#L8]›",
+      "text": "Current Password",
+      "src": "ticket:tickets/change-password.md#L8",
+      "group": "confirmed",
+      "how": "exact",
+      "atlas_text": "Current Password",
+      "atlas_ref": "atlas:change-password#Change Password"
+    },
+    {
+      "n": 2,
+      "line": 31,
+      "raw": "‹expected: New Password [src: ticket:tickets/change-password.md#L8]›",
+      "text": "New Password",
+      "src": "ticket:tickets/change-password.md#L8",
+      "group": "confirmed",
+      "how": "exact",
+      "atlas_text": "New Password",
+      "atlas_ref": "atlas:change-password#Change Password"
+    },
+    {
+      "n": 3,
+      "line": 31,
+      "raw": "‹expected: Repeat New Password [src: ticket:tickets/change-password.md#L8]›",
+      "text": "Repeat New Password",
+      "src": "ticket:tickets/change-password.md#L8",
+      "group": "confirmed",
+      "how": "exact",
+      "atlas_text": "Repeat New Password",
+      "atlas_ref": "atlas:change-password#Change Password"
+    },
+    {
+      "n": 4,
+      "line": 32,
+      "raw": "‹expected: Change [src: ticket:tickets/change-password.md#L8]›",
+      "text": "Change",
+      "src": "ticket:tickets/change-password.md#L8",
+      "group": "confirmed",
+      "how": "exact",
+      "atlas_text": "Change",
+      "atlas_ref": "atlas:change-password#Change Password"
+    },
+    {
+      "n": 5,
+      "line": 43,
+      "raw": "‹expected: Change [src: ticket:tickets/change-password.md#L8]›",
+      "text": "Change",
+      "src": "ticket:tickets/change-password.md#L8",
+      "group": "confirmed",
+      "how": "exact",
+      "atlas_text": "Change",
+      "atlas_ref": "atlas:change-password#Change Password"
+    },
+    {
+      "n": 6,
+      "line": 75,
+      "raw": "‹expected: Please provide a password. [src: similar:login-and-registration#M5]›",
+      "text": "Please provide a password.",
+      "src": "similar:login-and-registration#M5",
+      "group": "different",
+      "how": "similar",
+      "atlas_text": "Please provide your current password.",
+      "atlas_ref": "atlas:change-password#Change Password",
+      "near": [
+        {
+          "text": "Please provide your current password.",
+          "ref": "atlas:change-password#Change Password",
+          "score": 0.75
+        },
+        {
+          "text": "Please provide your new password.",
+          "ref": "atlas:change-password#M2",
+          "score": 0.75
+        },
+        {
+          "text": "Please repeat your password.",
+          "ref": "atlas:change-password#M3",
+          "score": 0.57
+        }
+      ]
+    },
+    {
+      "n": 7,
+      "line": 76,
+      "raw": "‹expected: Change [src: ticket:tickets/change-password.md#L8]›",
+      "text": "Change",
+      "src": "ticket:tickets/change-password.md#L8",
+      "group": "confirmed",
+      "how": "exact",
+      "atlas_text": "Change",
+      "atlas_ref": "atlas:change-password#Change Password"
+    },
+    {
+      "n": 8,
+      "line": 86,
+      "raw": "‹expected: Please provide a password. [src: similar:login-and-registration#M5]›",
+      "text": "Please provide a password.",
+      "src": "similar:login-and-registration#M5",
+      "group": "different",
+      "how": "similar",
+      "atlas_text": "Please provide your current password.",
+      "atlas_ref": "atlas:change-password#Change Password",
+      "near": [
+        {
+          "text": "Please provide your current password.",
+          "ref": "atlas:change-password#Change Password",
+          "score": 0.75
+        },
+        {
+          "text": "Please provide your new password.",
+          "ref": "atlas:change-password#M2",
+          "score": 0.75
+        },
+        {
+          "text": "Please repeat your password.",
+          "ref": "atlas:change-password#M3",
+          "score": 0.57
+        }
+      ]
+    },
+    {
+      "n": 9,
+      "line": 96,
+      "raw": "‹expected: Please repeat your password. [src: similar:login-and-registration#M6]›",
+      "text": "Please repeat your password.",
+      "src": "similar:login-and-registration#M6",
+      "group": "confirmed",
+      "how": "exact",
+      "atlas_text": "Please repeat your password.",
+      "atlas_ref": "atlas:change-password#M3"
+    },
+    {
+      "n": 10,
+      "line": 106,
+      "raw": "‹expected: Password must be 5-40 characters long. [src: similar:login-and-registration#M10]›",
+      "text": "Password must be 5-40 characters long.",
+      "src": "similar:login-and-registration#M10",
+      "group": "confirmed",
+      "how": "exact",
+      "atlas_text": "Password must be 5-40 characters long.",
+      "atlas_ref": "atlas:change-password#Change Password"
+    },
+    {
+      "n": 11,
+      "line": 107,
+      "raw": "‹expected: Change [src: ticket:tickets/change-password.md#L8]›",
+      "text": "Change",
+      "src": "ticket:tickets/change-password.md#L8",
+      "group": "confirmed",
+      "how": "exact",
+      "atlas_text": "Change",
+      "atlas_ref": "atlas:change-password#Change Password"
+    },
+    {
+      "n": 12,
+      "line": 118,
+      "raw": "‹expected: Change [src: ticket:tickets/change-password.md#L8]›",
+      "text": "Change",
+      "src": "ticket:tickets/change-password.md#L8",
+      "group": "confirmed",
+      "how": "exact",
+      "atlas_text": "Change",
+      "atlas_ref": "atlas:change-password#Change Password"
+    },
+    {
+      "n": 13,
+      "line": 129,
+      "raw": "‹expected: Change [src: ticket:tickets/change-password.md#L8]›",
+      "text": "Change",
+      "src": "ticket:tickets/change-password.md#L8",
+      "group": "confirmed",
+      "how": "exact",
+      "atlas_text": "Change",
+      "atlas_ref": "atlas:change-password#Change Password"
+    },
+    {
+      "n": 14,
+      "line": 139,
+      "raw": "‹expected: Passwords do not match [src: similar:login-and-registration#M11]›",
+      "text": "Passwords do not match",
+      "src": "similar:login-and-registration#M11",
+      "group": "confirmed",
+      "how": "exact",
+      "atlas_text": "Passwords do not match",
+      "atlas_ref": "atlas:change-password#M6"
+    },
+    {
+      "n": 15,
+      "line": 140,
+      "raw": "‹expected: Change [src: ticket:tickets/change-password.md#L8]›",
+      "text": "Change",
+      "src": "ticket:tickets/change-password.md#L8",
+      "group": "confirmed",
+      "how": "exact",
+      "atlas_text": "Change",
+      "atlas_ref": "atlas:change-password#Change Password"
+    },
+    {
+      "n": 16,
+      "line": 151,
+      "raw": "‹expected: Change [src: ticket:tickets/change-password.md#L8]›",
+      "text": "Change",
+      "src": "ticket:tickets/change-password.md#L8",
+      "group": "confirmed",
+      "how": "exact",
+      "atlas_text": "Change",
+      "atlas_ref": "atlas:change-password#Change Password"
+    }
+  ],
+  "counts": {
+    "total": 16,
+    "confirmed": 14,
+    "different": 2,
+    "not_found": 0
+  }
+}

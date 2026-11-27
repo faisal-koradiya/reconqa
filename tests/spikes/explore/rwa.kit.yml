@@ -1,0 +1,11 @@
+# Kit for the second eval app: Cypress Real World App on localhost (lab only).
+version: 1
+app:
+  url: http://localhost:3100
+  environments:
+    - name: local
+      url: http://localhost:3100
+      kind: local
+  test_data:
+    allow_create: true
+  extra_origins: [http://localhost:3101]

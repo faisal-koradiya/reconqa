@@ -1,0 +1,22 @@
+# Local only
+.env
+.env.*
+*.local.*
+.claude/settings.local.json
+.claude/settings.json
+__pycache__/
+node_modules/
+
+# ReconQA runtime files (also listed in the template for user projects)
+**/.reconqa/kit.local.yml
+**/.reconqa/.compiled.json
+**/.reconqa/pending/
+**/.reconqa/work/
+**/.reconqa/auth/
+**/atlas/**/shots/
+**/.playwright-output/
+tests/spikes/*/results/
+**/qa/bugs/shots/
+
+# Planning, review notes and spike notes: kept on this computer only
+local/

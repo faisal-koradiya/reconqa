@@ -1,0 +1,55 @@
+{
+  "openapi": "3.0.3",
+  "info": { "title": "Bank accounts (team spec, written from the stories)", "version": "1.0" },
+  "paths": {
+    "/bankAccounts": {
+      "get": {
+        "summary": "List the signed-in user's bank accounts",
+        "responses": {
+          "200": { "description": "Object with a results list" },
+          "401": { "description": "Not signed in" }
+        }
+      },
+      "post": {
+        "summary": "Add a bank account for the signed-in user",
+        "requestBody": { "content": { "application/json": { "schema": { "$ref": "#/components/schemas/NewBankAccount" } } } },
+        "responses": {
+          "201": { "description": "Created; body has the new account" },
+          "401": { "description": "Not signed in" },
+          "422": { "description": "Validation failed; body lists the errors per field" }
+        }
+      }
+    },
+    "/bankAccounts/{bankAccountId}": {
+      "parameters": [{ "name": "bankAccountId", "in": "path", "required": true, "schema": { "type": "string" } }],
+      "get": {
+        "summary": "One bank account",
+        "responses": {
+          "200": { "description": "Object with the account" },
+          "404": { "description": "No account with this id" },
+          "422": { "description": "The id is not a valid id" }
+        }
+      },
+      "delete": {
+        "summary": "Delete a bank account",
+        "responses": {
+          "204": { "description": "Deleted; no body" },
+          "401": { "description": "Not signed in" }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "NewBankAccount": {
+        "type": "object",
+        "required": ["bankName", "accountNumber", "routingNumber"],
+        "properties": {
+          "bankName": { "type": "string", "minLength": 5, "maxLength": 50 },
+          "accountNumber": { "type": "string", "pattern": "^[0-9]{9,12}$" },
+          "routingNumber": { "type": "string", "pattern": "^[0-9]{9}$" }
+        }
+      }
+    }
+  }
+}

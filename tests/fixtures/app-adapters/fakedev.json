@@ -1,0 +1,10 @@
+{
+  "_about": "Fake driver used only by tests: proves the gate denies tools a map does not list.",
+  "default_prefix": "mcp__fakedev__",
+  "target": "android",
+  "allow": ["screen_read", "tap"],
+  "ask": ["install_app"],
+  "ask_reasons": { "install_app": "installs an app on the device" },
+  "deny": ["factory_reset"],
+  "deny_reasons": { "factory_reset": "wipes the device" }
+}

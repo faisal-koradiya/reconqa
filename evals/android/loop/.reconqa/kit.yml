@@ -1,0 +1,19 @@
+# Lab config for Loop Habit Tracker (GPL-3.0, github.com/iSoron/uhabits) on the Android emulator.
+# Only keys that differ from the plugin defaults are listed.
+
+version: 1
+
+app:
+  target: android
+  android:
+    device: emulator-5554
+    package: org.isoron.uhabits
+    allow_reset: true     # lab emulator: a fresh start is fine
+  test_data:
+    allow_create: true    # emulator: explore may create habits with the test prefix
+
+capabilities:
+  app_driver:
+    tool: android-adb
+  tracker:
+    tool: none

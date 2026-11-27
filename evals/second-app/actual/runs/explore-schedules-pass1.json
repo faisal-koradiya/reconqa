@@ -1,0 +1,9 @@
+{
+  "cmd": "/reconqa:explore schedules",
+  "model": "sonnet",
+  "secs": 72,
+  "turns": 27,
+  "cost_usd": 0.31202409999999997,
+  "output": 6320,
+  "result": "I mapped only part of Schedules. The page is saved at `evals/second-app/actual/qa/atlas/schedules.md`, and its header says it is partial.\n\n**Mapped**\n- **Screens:** 2: the Schedules list at `/schedules` and the \"Schedule\" add dialog. The list has 7 columns and 4 demo rows. The dialog has 10 fields or controls.\n- **Messages:** 4 rows (M1–M4).\n- **Rules:** 4, all observed (R1–R4).\n\n**Main finding:** clicking \"Add\" with every field empty closes the dialog and saves a schedule. It shows \"None\" in the Name, Payee and Account columns, 11/26/2026, Due, \"~0.00\". No error message appears. I recorded this as R1 and as an open question for the team.\n\n**Left behind in the demo budget:** that blank schedule. I left it because the guardrails block deletes, so please delete it by hand.\n\n**Not explored** (listed under Open questions in the page):\n- row menu actions\n- \"Find schedules\"\n- \"Change upcoming length\"\n- the filter box\n- the Date and \"is approximately\" popups\n- the \"Repeats\" and \"Automatically add transaction\" toggles\n- field length and format limits\n- duplicate names\n- the happy path with a `reconqa`-prefixed name\n\nI stopped here, so the probing is thin. The empty-form save was the only probe I ran, and no screenshots were taken. A second pass on `/reconqa:explore schedules` would fill in the rest.\n\nThe \"Welcome to Actual!\" toast covers \"Add new schedule\" and blocks the click until it is closed. That is noted in the page."
+}

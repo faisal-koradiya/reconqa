@@ -1,0 +1,21 @@
+{
+  "date": "2026-11-26",
+  "ticket": "qa/cases/registration-spec.md",
+  "model": "sonnet",
+  "secs": 57,
+  "turns": 23,
+  "cost_usd": 0.28016840000000004,
+  "output": 6503,
+  "score": {
+    "items": 26,
+    "sorted": 26,
+    "sorted_pct": 100,
+    "correct": 26,
+    "checked": 26,
+    "planted_changes_in_different": 9,
+    "planted_changes": 9,
+    "wrongly_confirmed": [],
+    "wrong": [],
+    "unknown": []
+  }
+}

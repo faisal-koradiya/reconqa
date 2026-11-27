@@ -1,0 +1,10 @@
+{
+  "name": "reconqa",
+  "description": "Explore a live web or Android app into an atlas, then write test cases and bug drafts grounded in it, in your team's style.",
+  "version": "0.1.0",
+  "author": {
+    "name": "faisal-koradiya"
+  },
+  "license": "MIT",
+  "keywords": ["qa", "testing", "test-cases", "bug-reports", "playwright", "exploratory-testing", "android"]
+}

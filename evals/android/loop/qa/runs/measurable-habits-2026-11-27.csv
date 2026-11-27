@@ -1,0 +1,6 @@
+case_id,title,result,failed_or_blocked_step,actual,evidence
+TC-MEAS-001,Add habit offers a choice of habit type,passed,,,
+TC-MEAS-004,Target Type default and options,passed,,,
+TC-MEAS-006,Empty Target is refused on the measurable form,passed,,,
+TC-MEAS-007,Save a measurable habit,passed,,,
+TC-MEAS-010,Color button has an accessible label,blocked,1,"Precondition ""TalkBack is on"" could not be set up: the driver offers no way to turn TalkBack on or read what it says. In the snapshot the Color button has no text or description (`Button id=colorButton clickable`).",qa/runs/shots/measurable-habits-2026-11-27/TC-MEAS-010-step1.png

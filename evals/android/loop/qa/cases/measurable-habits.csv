@@ -1,0 +1,29 @@
+id,title,priority,area,preconditions,step_no,step,expected,source
+TC-MEAS-001,Add habit offers a choice of habit type,High,MEAS,App installed and started; intro skipped so the Habits list is shown.,1,Tap «Add habit».,A dialog opens with two options: «Yes or No» and «Measurable».,measurable-habits.md + atlas/creating-a-habit.md
+,,,,,2,Read the text under «Yes or No».,"The text is «e.g. Did you wake up early today? Did you exercise? Did you play chess?»",
+,,,,,3,Read the text under «Measurable».,"The text is «e.g. How many miles did you run today? How many pages did you read?»",
+TC-MEAS-002,Measurable form shows all its fields,High,MEAS,Habits list is shown.,1,"Tap «Add habit», then tap «Measurable».",The Create habit form opens.,measurable-habits.md + atlas/creating-a-habit.md
+,,,,,2,Look at the form from top to bottom (scroll if needed).,"These fields are shown: «Name», «Question», «Unit», «Target», «Frequency», «Target Type», «Reminder», «Notes». A Color button is also shown.",
+,,,,,3,Look at the top of the form.,The buttons «Navigate up» and «SAVE» are shown.,
+TC-MEAS-003,Measurable form hints,Medium,MEAS,Habits list is shown. The Create habit (Measurable) form is open and all fields are empty.,1,Read the hint in the empty «Name» field.,«Name» shows «e.g. Run»,measurable-habits.md + atlas/creating-a-habit.md
+,,,,,2,Read the hint in the empty «Question» field.,«Question» shows «e.g. How many miles did you run today?»,
+,,,,,3,Read the hint in the empty «Unit» field.,«Unit» shows «e.g. miles»,
+,,,,,4,Read the hint in the «Target» field.,«Target» shows «e.g. 15»,
+,,,,,5,Read the hint in the «Notes» field.,«Notes» shows «(Optional)»,
+TC-MEAS-004,Target Type default and options,Medium,MEAS,Habits list is shown. The Create habit (Measurable) form is open.,1,Read the value of «Target Type» without changing it.,The value is «At least».,measurable-habits.md + atlas/creating-a-habit.md
+,,,,,2,Tap «Target Type».,A picker opens with the options «At least» and «At most». No third option is listed.,
+,,,,,3,Choose «At most».,«Target Type» now shows «At most».,
+TC-MEAS-005,Frequency starts at Every day,Medium,MEAS,Habits list is shown.,1,"Tap «Add habit», then tap «Measurable».",The Create habit form opens.,measurable-habits.md + atlas/creating-a-habit.md
+,,,,,2,Read the value of «Frequency».,The value is «Every day».,
+TC-MEAS-006,Empty Target is refused on the measurable form,High,MEAS,Habits list is shown. The Create habit (Measurable) form is open and all fields are empty.,1,Tap «SAVE».,The form stays open; the Habits list is not shown. An error icon is shown on the «Target» field.,measurable-habits.md + atlas/creating-a-habit.md
+,,,,,2,Tap the «Target» field.,A popup on the field shows «Cannot be blank».,
+TC-MEAS-007,Save a measurable habit,High,MEAS,Habits list is shown. No habit named «reconqa Run» exists yet (or use another unique name with the prefix reconqa).,1,"Tap «Add habit», then tap «Measurable».",The Create habit form opens.,measurable-habits.md + atlas/creating-a-habit.md
+,,,,,2,"Enter `reconqa Run` in «Name», `miles` in «Unit» and `5` in «Target».",The values are shown in the fields.,
+,,,,,3,Tap «SAVE».,The app returns to the Habits list. A habit named `reconqa Run` is shown in the list.,
+TC-MEAS-008,Measurable habit saves with an empty Question,Low,MEAS,Habits list is shown. The Create habit (Measurable) form is open.,1,"Enter `reconqa Pages` in «Name», `pages` in «Unit» and `10` in «Target». Leave «Question» empty.",The values are shown; «Question» shows «e.g. How many miles did you run today?».,atlas/creating-a-habit.md (missing in ticket)
+,,,,,2,Tap «SAVE».,The app returns to the Habits list. A habit named `reconqa Pages` is shown. No error is shown.,
+TC-MEAS-009,Empty Name on the Yes or No form,High,MEAS,Habits list is shown.,1,"Tap «Add habit», then tap «Yes or No».",The Create habit form opens.,measurable-habits.md + atlas/creating-a-habit.md
+,,,,,2,Leave «Name» empty and tap «SAVE».,The form stays open. An error icon is shown on the «Name» field.,
+,,,,,3,Tap the «Name» field.,A popup under the field shows «Cannot be blank».,
+TC-MEAS-010,Color button has an accessible label,Low,MEAS,TalkBack is on. The Create habit (Measurable) form is open.,1,Move the TalkBack focus to the Color button (right of «Name»).,TalkBack reads a spoken label for the button (inferred: the atlas only shows that no label is exposed).,atlas/creating-a-habit.md (likely defect)
+TC-MEAS-011,Habit row controls have accessible labels,Low,MEAS,TalkBack is on. The habit `reconqa Run` exists (see TC-MEAS-007) and the Habits list is shown.,1,"Move the TalkBack focus through the controls in the `reconqa Run` row, one at a time.",Each of the 5 clickable controls in the row reads a spoken label (inferred: the atlas only shows that no label is exposed).,atlas/creating-a-habit.md (likely defect)

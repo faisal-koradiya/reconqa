@@ -1,0 +1,9 @@
+{
+  "cmd": "/reconqa:reconcile qa/cases/recurring-bills-pre-ui.md",
+  "model": "sonnet",
+  "secs": 27,
+  "turns": 11,
+  "cost_usd": 0.14431560000000002,
+  "output": 2262,
+  "result": "The dry run is done and nothing has been written yet. Of the 11 expected texts in `qa/cases/recurring-bills-pre-ui.md`, 9 match the screen, 2 differ and 0 are missing.\n\n**To convert to screen text (9 confirmed, all exact matches)**\n- 1–2: «Add new schedule» (TC-SCHED-001)\n- 3, 4, 5, 7, 8: «Add» (TC-SCHED-002, 003, 004, 008, 009)\n- 6: «Repeats» (TC-SCHED-005)\n- 9: «Automatically add transaction» (TC-SCHED-010)\n\n**Differ from the ticket (2, these stay open)**\n- **10 (TC-SCHED-011):** the ticket says \"is about\" (AC7). The screen shows \"is approximately\". Should the screen change, or the ticket?\n- **11 (TC-SCHED-013):** the ticket says the list column is \"Due date\" (AC8). The screen's column is \"Next date\". Should the screen change, or the ticket?\n\nThe script guessed \"Date\" for item 11, which is a dialog field. I corrected it to the list column \"Next date\".\n\n**Not on the screen:** none.\n\nWhich conversions should I apply: all 9, or all except some numbers? I'll write nothing until you answer. After that I'll run the grounding and case checks."
+}

@@ -1,0 +1,8 @@
+{
+  "_note": "Human marks for the spike atlas. Overrides auto-scoring: behaviour rows, false misses (role/attribute or example strings) and false hits (short or shared strings: G15 'or', G38 same message as login).",
+  "G3": "found", "G4": "found", "G5": "found", "G6": "found", "G8": "n/a",
+  "G15": "missed", "G22": "found", "G24": "found", "G26": "missed", "G35": "missed",
+  "G36": "missed", "G37": "n/a", "G38": "missed", "G53": "found", "G54": "found",
+  "G55": "missed", "G56": "found", "G57": "found", "G58": "found", "G59": "found",
+  "G60": "n/a", "G61": "found", "G62": "found", "G63": "n/a"
+}

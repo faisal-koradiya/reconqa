@@ -1,0 +1,24 @@
+# Lab config for the Cypress Real World App API (MIT, github.com/cypress-io/cypress-realworld-app),
+# run locally (API on 127.0.0.1:3101). Login values come from environment variables:
+#   export RWA_USER=<a seeded username>  RWA_PASSWORD=<the seed password from the app's README>
+
+version: 1
+
+app:
+  target: api
+  api:
+    base_url: http://localhost:3101
+    spec: docs/bank-accounts.openapi.json
+    login:
+      path: /login
+      body_env:
+        username: RWA_USER
+        password: RWA_PASSWORD
+  test_data:
+    allow_create: true    # local lab: explore may add bank accounts with the test prefix
+
+capabilities:
+  app_driver:
+    tool: http-api
+  tracker:
+    tool: none

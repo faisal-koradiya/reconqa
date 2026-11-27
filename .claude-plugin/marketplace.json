@@ -1,0 +1,16 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "reconqa",
+  "description": "ReconQA: QA test cases that quote your real app, not the AI's guess.",
+  "owner": {
+    "name": "faisal-koradiya"
+  },
+  "plugins": [
+    {
+      "name": "reconqa",
+      "source": "./plugins/reconqa",
+      "description": "Explore a live web app into an atlas, then write test cases and bug drafts grounded in it, in your team's style.",
+      "version": "0.1.0"
+    }
+  ]
+}

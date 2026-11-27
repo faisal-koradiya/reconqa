@@ -1,0 +1,27 @@
+{
+  "_about": "Tool map for ReconQA's built-in Android driver (drivers/android/server.mjs), used by the write gate. Any tool on this server that is not listed is denied. The driver itself pins one device and one app package from .reconqa/kit.yml and offers no raw shell.",
+  "default_prefix": "mcp__reconqa-android__",
+  "target": "android",
+  "allow": [
+    "android_snapshot",
+    "android_launch",
+    "android_tap",
+    "android_type",
+    "android_press",
+    "android_swipe",
+    "android_wait_for",
+    "android_screenshot",
+    "android_app_info",
+    "android_logcat"
+  ],
+  "ask": [
+    "android_clear_app_data",
+    "android_monkey"
+  ],
+  "ask_reasons": {
+    "android_monkey": "random taps and typing in the test app (extreme mode); it can create, change or delete data inside the test app",
+    "android_clear_app_data": "deletes the test app's data on the device (accounts, settings and records made in the app)"
+  },
+  "deny": [],
+  "tested_with": "reconqa-android 0.1.0 (built in)"
+}

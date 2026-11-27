@@ -1,0 +1,11 @@
+{
+  "about": "Answer key for the knowledge-base eval. Each ticket point below is already answered in the knowledge base (fixture decisions evals/kb/fixture/decisions.md, known issue K1). With the knowledge base, write-cases should not ask about it again (decision) or report it as a new likely defect (known issue). Without it, it should ask or report it.",
+  "feature": "registration",
+  "tickets": {
+    "kb-01-password-policy.md": [ { "ac": 1, "kind": "decision", "id": "D3" }, { "ac": 2, "kind": "known-issue", "id": "K1" } ],
+    "kb-02-registration-flow.md": [ { "ac": 1, "kind": "decision", "id": "D1" }, { "ac": 2, "kind": "decision", "id": "D2" }, { "ac": 3, "kind": "decision", "id": "D4" } ],
+    "kb-03-security-questions.md": [ { "ac": 1, "kind": "decision", "id": "D5" } ],
+    "kb-04-login-errors.md": [ { "ac": 1, "kind": "decision", "id": "D6" } ],
+    "kb-05-registration-review.md": [ { "ac": 1, "kind": "decision", "id": "D2" }, { "ac": 2, "kind": "decision", "id": "D3" }, { "ac": 3, "kind": "decision", "id": "D1" }, { "ac": 4, "kind": "known-issue", "id": "K1" } ]
+  }
+}

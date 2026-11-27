@@ -1,0 +1,9 @@
+{
+  "about": "Expected ticket-vs-app findings for tickets/measurable-habits.md against qa/atlas/creating-a-habit.md (fictional ticket, Loop 2.3.2).",
+  "mismatch": [
+    { "ac": 3, "why": "Target placeholder is 'e.g. 15'" },
+    { "ac": 4, "why": "only 'At least' and 'At most'; there is no 'Exactly'" },
+    { "ac": 5, "why": "the message is 'Cannot be blank' (seen on Name in the Yes or No form; on the Measurable form the atlas records it for Target)" }
+  ],
+  "match": [1, 2, 6, 7, 8]
+}

@@ -1,0 +1,18 @@
+# Second test app: Actual Budget 26.11.0 (open-source budgeting app), local lab only.
+version: 1
+
+app:
+  url: http://127.0.0.1:5006
+  environments:
+    - name: local
+      url: http://127.0.0.1:5006
+      kind: local
+      writes_allowed: true
+  auth:
+    test_accounts: [lab-owner]   # the lab browser profile is already logged in to a demo budget
+  test_data:
+    allow_create: true           # local demo budget: exploring may add test schedules or rules
+
+capabilities:
+  tracker:
+    tool: none

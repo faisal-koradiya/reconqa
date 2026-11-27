@@ -1,0 +1,42 @@
+# Example team config for the OWASP Juice Shop demo (runs on localhost).
+# Only keys that differ from the plugin defaults are listed.
+
+version: 1
+
+app:
+  url: http://localhost:3000
+  environments:
+    - name: local
+      url: http://localhost:3000
+      kind: local
+      writes_allowed: true
+  auth:
+    test_accounts: [demo-customer]
+  test_data:
+    allow_create: true   # local demo: explore may register test users
+
+capabilities:
+  tracker:
+    tool: none        # switch to github-issues (and set repo) to file bugs on GitHub
+
+cases:
+  priority_scale: [P1, P2, P3]
+
+words:
+  banned:
+    - word: target user
+      use: test user
+  glossary:
+    basket: the shopping cart
+
+rules:
+  - id: no-step-refs-in-expected
+    scope: [write-cases]
+    text: Expected results never refer to step numbers.
+    check:
+      field: expected
+      must_not_match: "\\b(in )?step \\d+"
+      ignore_case: true
+  - id: should-phrasing
+    scope: [write-cases]
+    text: Phrase expected results with "should".

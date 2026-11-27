@@ -1,0 +1,22 @@
+{
+  "date": "2026-11-26",
+  "ticket": "qa/cases/registration-spec.md",
+  "model": "sonnet",
+  "secs": 29,
+  "turns": 12,
+  "cost_usd": 0.2244177,
+  "output": 3122,
+  "result": "Dry run done; nothing has been written to the cases file yet. Here is what I'd apply.\n\n**Will be converted to the screen's text (14):** items 1–10, 12, 13, 16 and 24 (full list above). Items 6, 10 and 24 differ from the ticket only in case or end punctuation (`Security Question`, `Please provide a password.`, `Email must be unique`).\n\n**Different on the screen (9), left open as questions for the team:**\n- **#11:** Ticket says \"Password must be 8 to 40 characters.\" The screen shows \"Password must be 5-40 characters long.\" Which limit is right? TC-REG-006 and TC-REG-007 depend on the answer.\n- **#14:** Ticket says \"Show password tips\". The screen shows \"Show password advice\".\n- **#15:** Ticket says \"Please choose a security question.\" The screen shows \"Please select a security question.\"\n- **#18, #20, #23, #25:** Ticket says \"Create account\". The registration button on the screen is \"Register\".\n- **#21, #22:** Ticket says \"Registration successful. Please log in.\" The screen shows \"Registration completed successfully. You can now log in.\"\n\nFor each, the question is whether to change the screen or update the ticket.\n\n**Not on the screen (3):**\n- **#17 and #19:** There is no \"I accept the terms and conditions\" checkbox. The form is valid without it, so TC-REG-014 can't be run as written.\n- **#26:** There is no \"Sign up with Google\" button on the registration screen. \"Log in with Google\" exists only on the login screen.\n\nWhich conversions should I apply: all 14, or all except some numbers? I'll write nothing until you answer. After you answer I'll run `apply`, the grounding check and the case check.",
+  "score": {
+    "items": 26,
+    "sorted": 26,
+    "sorted_pct": 100,
+    "correct": 26,
+    "checked": 26,
+    "planted_changes_in_different": 9,
+    "planted_changes": 9,
+    "wrongly_confirmed": [],
+    "wrong": [],
+    "unknown": []
+  }
+}

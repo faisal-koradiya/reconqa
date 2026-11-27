@@ -1,0 +1,20 @@
+{
+  "_about": "Tool map for ReconQA's built-in API driver (drivers/api/server.mjs), used by the write gate. Any tool on this server that is not listed is denied. The driver itself keeps requests on app.api.base_url, allows writes only with allow_create on a test server, and changes or deletes only records the run created.",
+  "default_prefix": "mcp__reconqa-api__",
+  "target": "api",
+  "allow": [
+    "api_spec",
+    "api_get",
+    "api_send",
+    "api_login",
+    "api_created"
+  ],
+  "ask": [
+    "api_delete"
+  ],
+  "ask_reasons": {
+    "api_delete": "deletes a record on the API server (only records this run created)"
+  },
+  "deny": [],
+  "tested_with": "reconqa-api 0.1.0 (built in)"
+}

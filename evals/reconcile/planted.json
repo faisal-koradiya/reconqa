@@ -1,0 +1,112 @@
+{
+  "about": "Answer key for the reconcile eval. Ticket: examples/juice-shop/tickets/registration-spec.md (fictional), written as if before the screen existed. Atlas: examples/juice-shop/qa/atlas/login-and-registration.md (hidden while the pre-UI cases are written). Each quoted ticket text should end up in the listed group.",
+  "ticket": "tickets/registration-spec.md",
+  "atlas": "login-and-registration",
+  "confirmed": [
+    {
+      "text": "Already a customer?",
+      "ac": 1
+    },
+    {
+      "text": "Email",
+      "ac": 2
+    },
+    {
+      "text": "Password",
+      "ac": 2
+    },
+    {
+      "text": "Repeat Password",
+      "ac": 2
+    },
+    {
+      "text": "Answer",
+      "ac": 2
+    },
+    {
+      "text": "Email address is not valid.",
+      "ac": 3,
+      "atlas": "M9"
+    },
+    {
+      "text": "Please provide an email address.",
+      "ac": 4,
+      "atlas": "M4"
+    },
+    {
+      "text": "Passwords do not match",
+      "ac": 6,
+      "atlas": "M11"
+    },
+    {
+      "text": "Please repeat your password.",
+      "ac": 6,
+      "atlas": "M6"
+    },
+    {
+      "text": "This cannot be changed later!",
+      "ac": 8
+    }
+  ],
+  "confirmed_normalised": [
+    {
+      "text": "Security question",
+      "ac": 2,
+      "atlas_text": "Security Question"
+    },
+    {
+      "text": "Please provide a password",
+      "ac": 4,
+      "atlas_text": "Please provide a password.",
+      "atlas": "M5"
+    },
+    {
+      "text": "Email must be unique.",
+      "ac": 11,
+      "atlas_text": "Email must be unique",
+      "atlas": "M12"
+    }
+  ],
+  "different": [
+    {
+      "text": "Password must be 8 to 40 characters.",
+      "ac": 5,
+      "atlas_text": "Password must be 5-40 characters long.",
+      "atlas": "M10"
+    },
+    {
+      "text": "Show password tips",
+      "ac": 7,
+      "atlas_text": "Show password advice"
+    },
+    {
+      "text": "Please choose a security question.",
+      "ac": 8,
+      "atlas_text": "Please select a security question.",
+      "atlas": "M7"
+    },
+    {
+      "text": "Create account",
+      "ac": 10,
+      "atlas_text": "Register"
+    },
+    {
+      "text": "Registration successful. Please log in.",
+      "ac": 12,
+      "atlas_text": "Registration completed successfully. You can now log in.",
+      "atlas": "M13"
+    }
+  ],
+  "not_found": [
+    {
+      "text": "I accept the terms and conditions",
+      "ac": 9
+    },
+    {
+      "text": "Sign up with Google",
+      "ac": 10,
+      "also_ok": "different",
+      "why": "the login page has Log in with Google; either group is a fair reading"
+    }
+  ]
+}

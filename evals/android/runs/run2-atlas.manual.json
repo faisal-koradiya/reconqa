@@ -1,0 +1,4 @@
+{
+  "_note": "Human marks for run 2 (driver_guide fix: the model read the Android guide). G17 and G19 matched only on shared strings, so they are marked missed. G23 needs both Unit and Question optional; Unit was not tested.",
+  "G11": "found", "G17": "missed", "G19": "missed", "G22": "found", "G23": "missed", "G24": "missed", "G25": "found"
+}

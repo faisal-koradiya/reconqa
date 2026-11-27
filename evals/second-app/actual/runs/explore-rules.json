@@ -1,0 +1,9 @@
+{
+  "cmd": "/reconqa:explore rules (the transaction rules list and the rule editor)",
+  "model": "sonnet",
+  "secs": 153,
+  "turns": 65,
+  "cost_usd": 0.6322140999999999,
+  "output": 12660,
+  "result": "I mapped the rules area and wrote the atlas page, but it's only partly done and my own test rule is still in the app. The page is `qa/atlas/rules.md`, with one screenshot in `qa/atlas/shots/rules/`.\n\n- **Coverage:** 2 screens: the rules list (`/settings/rules`) and the \"Rule\" editor dialog. The page records 5 messages, 7 rules and 8 open questions.\n- **Leftover rule:** I created a test rule, \"notes matches (\" set to \"category (nothing)\". I couldn't find any way to select or delete a rule in the list. Someone needs to remove it from the local app by hand.\n- **Rule saves with nothing filled in:** An empty rule saved with no error. A \"matches\" condition with the invalid pattern `(` also saved. Both are recorded as observed rules R1 and R2, and look like likely test cases.\n- **Reaching the area:** There is no Rules link in the sidebar. Click Settings, then Rules in the Settings menu.\n- **Not mapped:**\n  - The Pre, Default and Post stage buttons, and why the Stage column was blank.\n  - Operators for most condition fields (only \"notes\" was opened).\n  - Add entry, Delete entry, the \"any\" option and the split rows.\n  - The preview of matching transactions.\n- **Sync banner:** \"There was a problem syncing your changes. Please confirm that your server is accessible.\" appeared throughout. It's recorded as a message and as an open question about this local setup.\n- **Tool glitch:** Bash was denied once when I tried to read a snapshot file, so I read those through the Grep and Read tools instead."
+}

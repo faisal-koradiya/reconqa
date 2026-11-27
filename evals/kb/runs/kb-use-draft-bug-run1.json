@@ -1,0 +1,10 @@
+{
+  "date": "2026-11-26",
+  "which": "draft-bug",
+  "model": "sonnet",
+  "secs": 16,
+  "turns": 7,
+  "cost_usd": 0.11882880000000003,
+  "output": 1148,
+  "result": "This is already known, so I've stopped and drafted nothing new.\n\n**Known issue K1: \"Password counter shows \"/20\" although the limit is 40\"**\n- Status: open, first seen 2026-11-26.\n- Screen: User Registration.\n- Bug draft: `qa/bugs/password-counter-shows-20.md`.\n\nYour report matches it on screen and symptom:\n- The counter under «Password» reads «0/20» on load and «40/20» after 40 characters.\n- The hint says «Password must be 5-40 characters long.»\n- The «Repeat Password» counter correctly reads «0/40».\n\nThe existing draft records 2 of 2 reproductions, with a screenshot at `qa/bugs/shots/password-counter-20.png`. Its severity is Trivial. `tracker_policy.filing` is `draft-only` and no tracker is configured, so nothing has been filed. I did not reproduce the problem again.\n\nIf you think yours is a different problem, tell me how and I'll reproduce it and draft a separate report. For example, it might be a different page, or the counter might fail to update while you type."
+}

@@ -1,0 +1,10 @@
+{
+  "date": "2026-11-26",
+  "which": "write-cases",
+  "model": "sonnet",
+  "secs": 55,
+  "turns": 20,
+  "cost_usd": 0.2630331,
+  "output": 7764,
+  "result": "I wrote 5 test cases (TC-REG-101 to TC-REG-105) for the registration follow-up ticket. The grounding check passes (37 of 37 marked UI strings are in the atlas). The kit check passes with 0 problems. I didn't re-run the checks on the CSV after fixing its quoting. Nothing was sent to any external tool.\n\n**Cases**\n- **TC-REG-101:** After registering, the login page opens and the user is still logged out (AC1).\n- **TC-REG-102:** A duplicate email is rejected (AC3).\n- **TC-REG-103:** The «Show password advice» switch shows the strength bar and the checklist (AC4).\n- **TC-REG-104:** The «Security Question» hint «This cannot be changed later!» is shown (AC5).\n- **TC-REG-105:** After typing 41 characters, the password counter shows «40/20».\n\n**Mismatches (1)**\n- **Mismatch, AC3:**\n  - The ticket wants \"This email is already registered.\" under the email field.\n  - The app shows an alert banner «Email must be unique» under the «User Registration» heading (M12).\n  - TC-REG-102 tests what the app does and checks that the ticket's text doesn't appear. The ticket's text isn't in the atlas, so it is not marked as UI text.\n\n**Answered by the knowledge base**\n- **AC1:** Decision registration/D1 says the login page after registering is intended, so TC-REG-101 expects that.\n- **AC2:** Decision registration/D2 puts terms and conditions out of scope, so there are no cases and no report.\n- **Counter «40/20»:** Known issue registration/K1 covers it. TC-REG-105 cites it and it is not reported again.\n\n**Open questions**\n- Is «Show password advice» off by default, and does the checklist update while typing? The atlas only says what is shown when the switch is on.\n- The ticket gives no wording for the AC5 message. Is the app's hint the wanted text?\n\n**Files**\n- `qa/cases/registration-follow-up.md`\n- `qa/cases/registration-follow-up.csv`\n\nOnce the team replies to the open questions, `/reconqa:kb answer` can record their answers."
+}

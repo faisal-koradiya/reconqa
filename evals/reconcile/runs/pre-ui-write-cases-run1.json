@@ -1,0 +1,16 @@
+{
+  "date": "2026-11-26",
+  "ticket": "tickets/registration-spec.md",
+  "model": "sonnet",
+  "secs": 109,
+  "turns": 16,
+  "cost_usd": 0.38340939999999996,
+  "output": 17213,
+  "result": "I wrote 18 pre-UI cases for the registration ticket. The kit checker passes on the Markdown file with 0 problems. It can't read the CSV, so the CSV is unchecked.\n\n**Files**\n- `qa/cases/registration-spec.md` (the checked file)\n- `qa/cases/registration-spec.csv`\n\n**CSV:** The checker only accepts the Markdown layout, so it reported \"No cases found\" for the CSV. The CSV holds the same cases, one row per step, in the layout from `cases.csv.md`.\n\n**Header and sources:** The header says `Atlas: none yet`. There is no atlas, so I skipped the grounding check. The checker confirmed that every ‹expected: …› text carries a source back to a ticket criterion (`ticket:tickets/registration-spec.md#AC<n>`). It counted 26 such texts in the Markdown file.\n\n**Knowledge base:** There is no `qa/kb`, so no decisions or known issues were applied and nothing was answered from the knowledge base.\n\n**Mismatches:** There is no app to compare against, so section 1 lists 12 questions about gaps in the ticket instead. The main ones:\n- The login-page link that opens the registration form has no text in the ticket.\n- Nothing says what happens with a password longer than 40 characters, so I wrote no case for it.\n- Nothing says what happens when the terms box isn't ticked, whether the button is disabled or an error appears. TC-REG-014 only checks that no account is created.\n- The ticket doesn't say what the Google sign-up does. TC-REG-018 only checks that the button is shown.\n- Which security questions are offered, and where \"This cannot be changed later!\" appears, are also open.\n- Email uniqueness: it isn't stated whether the check ignores case.\n- Message punctuation is inconsistent in the ticket: two messages have no full stop.\n\n**Next steps**\n- Once the screen is built, run `/reconqa:reconcile qa/cases/registration-spec.md`. Only reconcile turns the ‹expected› texts into real screen text.\n- When the team has answered the questions, record the answers with `/reconqa:kb answer`.\n- Nothing was sent ",
+  "score": {
+    "ticket_texts_marked": "20/20",
+    "ui_marks": 0,
+    "check_cases_problems": 0,
+    "expectations": 26
+  }
+}

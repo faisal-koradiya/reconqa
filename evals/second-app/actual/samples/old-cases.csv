@@ -1,0 +1,33 @@
+Test Key,Summary,Component,Priority,Step,Expected Result
+AB-101,Open the schedules page,Schedules,Medium,Click Schedules in the sidebar,The Schedules page opens with a table
+AB-102,Schedules table columns,Schedules,Medium,Open Schedules,"Columns are Name, Payee, Account, Due date, Status, Amount, Recurring"
+AB-103,Create schedule button,Schedules,Medium,Open Schedules,A 'Create schedule' button is shown above the table
+AB-104,Open the add dialog,Schedules,Medium,Click 'Add new schedule',The 'Schedule' dialog opens
+AB-105,Filter box placeholder,Schedules,Medium,Look at the search box,It shows 'Filter schedules…'
+AB-106,Status values,Schedules,Medium,Look at the Status column of the demo data,"Statuses include Missed, Due, Upcoming and Scheduled"
+AB-107,Approximate amounts,Schedules,Medium,Hover an amount starting with ~,A tooltip shows 'Approximately' and the amount
+AB-108,Repeats default,Schedules,Medium,Open the add dialog,The Repeats checkbox is unchecked
+AB-109,Auto-add default,Schedules,Medium,Open the add dialog,'Automatically add transaction' is checked
+AB-110,Amount operators,Schedules,Medium,Open the amount operator list,"Options are 'is about', 'is exactly' and 'is between'"
+AB-111,Between shows two amounts,Schedules,Medium,Choose 'is between',Two amount boxes appear joined by 'and'
+AB-112,Default amount,Schedules,Medium,Open the add dialog,Amount shows 0.00
+AB-113,End options,Schedules,Medium,Click the Date button,"End options are 'never', 'after' and 'on date'"
+AB-114,Repeat units,Schedules,Medium,Click the Date button,"Units are Days, Weeks and Months"
+AB-115,Add specific days for months,Schedules,Medium,Click the Date button,'Add specific days' is shown while the unit is Months
+AB-116,Date popup buttons,Schedules,Medium,Click the Date button,'Cancel' and 'Apply' are shown
+AB-117,Upcoming dates in the popup,Schedules,Medium,Click the Date button,The preview lists the next 6 dates
+AB-118,Single date without repeat,Schedules,Medium,Uncheck Repeats,The Date button becomes a single date box
+AB-119,Upcoming length options,Schedules,Medium,Open Upcoming length,"Options include '1 day', '1 week', '2 weeks', '1 month' and 'Custom length'"
+AB-120,Upcoming length hint,Schedules,Medium,Look at Upcoming length,The hint 'How far in advance this schedule appears as upcoming' is shown
+AB-121,No matching transactions,Schedules,Medium,Open the add dialog with an empty form,'No matching transactions' is shown
+AB-122,Name required,Schedules,Medium,Leave every field empty,—
+,,,,Click Add,An error 'Name is required' is shown and nothing is saved
+AB-123,Long schedule name,Schedules,Medium,Enter a 180-character name and click Add,The full name is shown in the list
+AB-124,Cancel closes dialog,Schedules,Medium,Fill a name,—
+,,,,Click Cancel,The dialog closes and nothing is saved
+AB-125,Edit a schedule,Schedules,Medium,Open the row menu and choose Edit,The dialog opens with the saved values
+AB-126,Delete a schedule,Schedules,Medium,Open the row menu and choose Delete,The schedule is removed after confirming
+AB-127,Find schedules,Schedules,Medium,Click 'Find schedules',Suggested schedules from transactions are listed
+AB-128,Link transactions,Schedules,Medium,Click 'Select transactions to link on save',Matching transactions can be selected
+AB-129,Skip next date,Schedules,Medium,Open the row menu and choose 'Skip next date',The next date moves to the following month
+AB-130,Rule from schedule,Schedules,Medium,Open a schedule's rule,The rule editor shows the schedule conditions

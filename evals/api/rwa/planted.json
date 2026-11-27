@@ -1,0 +1,21 @@
+{
+  "_about": "Answer key for the bank-accounts spec. Checked against the lab API with curl before any model run (RWA commit 0729f68). 'planted' = the spec is wrong; 'correct' = the spec matches the server.",
+  "planted": [
+    { "id": "P1", "claim": "POST /bankAccounts answers 201", "server": "200 with {account}" },
+    { "id": "P2", "claim": "bankName minLength 5 (shorter is refused)", "server": "a 2-character bankName is accepted (200)" },
+    { "id": "P3", "claim": "routingNumber must be exactly 9 digits", "server": "any string is accepted, e.g. \"12\" (200)" },
+    { "id": "P4", "claim": "GET /bankAccounts/{id} answers 404 for an unknown id", "server": "200 with an empty object {}" },
+    { "id": "P5", "claim": "DELETE answers 204 with no body", "server": "200 with {} and the account is only marked isDeleted: true (still readable by id)" }
+  ],
+  "correct": [
+    { "id": "C1", "claim": "GET /bankAccounts without login answers 401", "server": "401 {\"error\":\"Unauthorized\"}" },
+    { "id": "C2", "claim": "GET /bankAccounts returns a results list", "server": "200 {results: [...]}" },
+    { "id": "C3", "claim": "POST with a missing field answers 422 with errors per field", "server": "422 {errors: [{msg: \"Invalid value\", param: <field>, location: \"body\"}]}" },
+    { "id": "C4", "claim": "GET /bankAccounts/{id} with a malformed id answers 422", "server": "422, param bankAccountId, location params" }
+  ],
+  "extra_true_findings": [
+    "accountNumber as a number (not a string) answers 422",
+    "the error message is the generic \"Invalid value\" for every field",
+    "POST /login answers with the user object, including a password hash (the driver hides it)"
+  ]
+}

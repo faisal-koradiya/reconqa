@@ -1,0 +1,68 @@
+{
+  "about": "Answer key for the second-app import (Actual Budget 26.11.0, fictional old cases written by us after exploring). 9 outdated cases planted; 6 cases are about screens not explored (must be 'not checked').",
+  "planted": [
+    {
+      "id": "P1",
+      "source": "old-cases.csv",
+      "case": "AB-103",
+      "what": "button 'Create schedule' vs 'Add new schedule'"
+    },
+    {
+      "id": "P2",
+      "source": "old-cases.csv",
+      "case": "AB-113",
+      "what": "end options never/after/on date vs indefinitely/for/until"
+    },
+    {
+      "id": "P3",
+      "source": "old-cases.csv",
+      "case": "AB-114",
+      "what": "units without Years"
+    },
+    {
+      "id": "P4",
+      "source": "old-cases.csv",
+      "case": "AB-110",
+      "what": "'is about' vs 'is approximately'"
+    },
+    {
+      "id": "P5",
+      "source": "old-cases.csv",
+      "case": "AB-122",
+      "what": "empty form shows 'Name is required' vs saves a 'None' schedule (R1)"
+    },
+    {
+      "id": "P6",
+      "source": "old-cases.csv",
+      "case": "AB-108",
+      "what": "Repeats unchecked vs checked by default"
+    },
+    {
+      "id": "P7",
+      "source": "old-cases.csv",
+      "case": "AB-117",
+      "what": "popup preview 6 dates vs 4"
+    },
+    {
+      "id": "P8",
+      "source": "old-cases.csv",
+      "case": "AB-102",
+      "what": "column 'Due date' vs 'Next date'"
+    },
+    {
+      "id": "P9",
+      "source": "old-cases.csv",
+      "case": "AB-109",
+      "what": "auto-add checked vs unchecked by default"
+    }
+  ],
+  "injections": [],
+  "not_explored": [
+    "Edit",
+    "Delete",
+    "Find schedules",
+    "Link transactions",
+    "Skip next date",
+    "Rule from schedule"
+  ]
+}

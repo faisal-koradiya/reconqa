@@ -1,0 +1,10 @@
+{
+  "secs": 46,
+  "turns": 28,
+  "cost_usd": 0.18188510000000002,
+  "cache_read": 318031,
+  "cache_write": 23837,
+  "output": 5469,
+  "result": "I mapped the bank accounts endpoints and wrote the atlas page. The server accepts almost everything the spec says it should reject. I did not test DELETE, because the delete request wasn't approved.\n\nAtlas page: `qa/atlas/bank-accounts.md`\n\n- **Endpoints covered:** 5 (GET list, POST, GET one, OPTIONS, and DELETE, which I only recorded from the spec).\n- **Messages:** 2 rows. Both are the generic \"Invalid value\", from a POST with an empty body and a POST with numbers instead of strings.\n- **Rules:** 8, all observed.\n- **Open questions:** 5.\n\nThe server and the spec disagree in these places:\n- **Validation:** none of the length or pattern rules from the spec are enforced. A 4-character `bankName`, 8-, 10- and 13-digit numbers, letters in the numbers, and empty strings were all accepted. Only a missing field or a number instead of a string gets a 422.\n- **Create status:** POST returns 200, n",
+  "model": "sonnet"
+}

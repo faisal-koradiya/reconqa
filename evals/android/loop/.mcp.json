@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "reconqa-android": {
+      "command": "node",
+      "args": ["../../../plugins/reconqa/drivers/android/server.mjs"]
+    }
+  }
+}

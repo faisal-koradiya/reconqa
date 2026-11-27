@@ -1,0 +1,9 @@
+{
+  "target": "android",
+  "area": "creating-a-habit",
+  "model": "sonnet",
+  "secs": 127,
+  "turns": 42,
+  "cost_usd": 0.28138869999999994,
+  "result": "I ran a partial break test on creating a habit and found one major bug. The report is at `qa/breaks/creating-a-habit-2026-11-27.md`, and `check-break.mjs` reports no problems with it.\n\nI used 36 of 80 actions and stopped early to keep the budget small. The monkey run was not approved, so there is no seed and no crash data. The Measurable form, the Unit, Target, Question and Notes fields, the Frequency dialog, Back during save and unusual fill order are all untested.\n\n- **Major (#1):** A Name of 3 spaces saves on the Yes or No form, which adds a habit with a blank-looking name. The atlas says a blank Name is rejected with \"Cannot be blank\". It happened twice, so it is confirmed.\n- **Minor (#2):** A 255-character name saves with no message and no crash. The field accepted 255 characters, not the catalogue's 256. I did not check whether the long name breaks the list layout.\n- **Held up well:** Pressing SAVE twice quickly created only one habit.\n\nThe test habits I left behind are one with a 255-character name and two with spaces-only names. None have the `reconqa` prefix, because the catalogue values don't include it.\n\nI can draft the major bug with `/reconqa:draft-bug qa/breaks/creating-a-habit-2026-11-27.md #1`. I can also continue with the untested fields, or run the monkey test if you approve it."
+}

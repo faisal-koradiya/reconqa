@@ -1,0 +1,9 @@
+{
+  "target": "web",
+  "area": "login-and-registration (the registration form)",
+  "model": "sonnet",
+  "secs": 106,
+  "turns": 46,
+  "cost_usd": 0.34530830000000007,
+  "result": "I found 4 problems in the registration form: 1 major and 3 minor. The report is `qa/breaks/login-and-registration-2026-11-27.md`, and the report checker passed with 0 problems.\n\nI did not test everything. I used about 30 actions, and the config doesn't set `explore.max_steps`, so I assumed 40. The gate blocked scripted browser code, so I worked one field at a time. Most of the email, password and answer catalogue values, Back or reload during a save, and the 5000-character value are untested. The report lists these as not tested.\n\n1. **Major:** the same email in a different letter case registers as a new account. `reconqa@example`, `RECONQA@example` and `ReconQA@example` all returned 201. The atlas says emails must be unique. I repeated this once with the third casing, and it happened again.\n2. **Minor:** a 41-character password is silently cut to 40 in Password, but Repeat Password keeps all 41. The form then says \"Passwords do not match\" with no hint why. I saw this once. The screenshot is `qa/breaks/shots/pw41.png`.\n3. **Minor:** the Password counter shows \"12/20\" while the hint says 5-40 characters.\n4. **Minor:** `reconqa@example` (no dot in the domain) is accepted and registers. It may be intended.\n\nTwo things held up: `reconqa@@example.test` is rejected with \"Email address is not valid.\" And double-clicking Register sent exactly one POST.\n\nThe test run left three accounts behind: `reconqa@example`, `RECONQA@example` and `ReconQA@example`.\n\nI can draft a bug for the major finding with `/reconqa:draft-bug qa/breaks/login-and-registration-2026-11-27.md #1`."
+}

@@ -1,0 +1,40 @@
+{
+  "_about": "Tool map for the Claude in Chrome extension (built into Claude Code, server name claude-in-chrome), used by the write gate. Any tool on this server that is not listed is denied. Tool names checked in a Claude Code session on 2026-11-26.",
+  "default_prefix": "mcp__claude-in-chrome__",
+  "target": "web",
+  "allow": [
+    "tabs_context_mcp",
+    "tabs_create_mcp",
+    "tabs_close_mcp",
+    "navigate",
+    "computer",
+    "read_page",
+    "find",
+    "form_input",
+    "get_page_text",
+    "read_console_messages",
+    "read_network_requests",
+    "resize_window",
+    "list_connected_browsers"
+  ],
+  "ask": [
+    "javascript_tool",
+    "file_upload",
+    "upload_image",
+    "browser_batch",
+    "select_browser",
+    "switch_browser",
+    "gif_creator"
+  ],
+  "ask_reasons": {
+    "javascript_tool": "runs your own JavaScript inside the app page",
+    "file_upload": "sends a file from this computer to the app",
+    "upload_image": "sends an image from this computer to the app",
+    "browser_batch": "runs several browser actions in one call, so check the whole list",
+    "select_browser": "switches to another Chrome browser or profile (stay on the test profile)",
+    "switch_browser": "switches to another Chrome browser or profile (stay on the test profile)",
+    "gif_creator": "records the screen into a file, which may show personal data"
+  },
+  "deny": [],
+  "tested_with": "Claude in Chrome extension tool names as of 2026-11-26"
+}

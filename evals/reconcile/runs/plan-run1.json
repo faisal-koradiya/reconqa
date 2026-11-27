@@ -1,0 +1,470 @@
+{
+  "cases": "qa/cases/registration-spec.md", "note": "Plan after the model review in live run 1 (work folder paths are relative to examples/juice-shop)",
+  "pages": [
+    "login-and-registration"
+  ],
+  "items": [
+    {
+      "n": 1,
+      "line": 12,
+      "raw": "‹expected: Already a customer? [src: ticket:tickets/registration-spec.md#AC1]›",
+      "text": "Already a customer?",
+      "src": "ticket:tickets/registration-spec.md#AC1",
+      "group": "confirmed",
+      "how": "exact",
+      "atlas_text": "Already a customer?",
+      "atlas_ref": "atlas:login-and-registration#User Registration"
+    },
+    {
+      "n": 2,
+      "line": 35,
+      "raw": "‹expected: Already a customer? [src: ticket:tickets/registration-spec.md#AC1]›",
+      "text": "Already a customer?",
+      "src": "ticket:tickets/registration-spec.md#AC1",
+      "group": "confirmed",
+      "how": "exact",
+      "atlas_text": "Already a customer?",
+      "atlas_ref": "atlas:login-and-registration#User Registration"
+    },
+    {
+      "n": 3,
+      "line": 45,
+      "raw": "‹expected: Email [src: ticket:tickets/registration-spec.md#AC2]›",
+      "text": "Email",
+      "src": "ticket:tickets/registration-spec.md#AC2",
+      "group": "confirmed",
+      "how": "exact",
+      "atlas_text": "Email",
+      "atlas_ref": "atlas:login-and-registration#Login"
+    },
+    {
+      "n": 4,
+      "line": 45,
+      "raw": "‹expected: Password [src: ticket:tickets/registration-spec.md#AC2]›",
+      "text": "Password",
+      "src": "ticket:tickets/registration-spec.md#AC2",
+      "group": "confirmed",
+      "how": "exact",
+      "atlas_text": "Password",
+      "atlas_ref": "atlas:login-and-registration#Login"
+    },
+    {
+      "n": 5,
+      "line": 45,
+      "raw": "‹expected: Repeat Password [src: ticket:tickets/registration-spec.md#AC2]›",
+      "text": "Repeat Password",
+      "src": "ticket:tickets/registration-spec.md#AC2",
+      "group": "confirmed",
+      "how": "exact",
+      "atlas_text": "Repeat Password",
+      "atlas_ref": "atlas:login-and-registration#User Registration"
+    },
+    {
+      "n": 6,
+      "line": 45,
+      "raw": "‹expected: Security question [src: ticket:tickets/registration-spec.md#AC2]›",
+      "text": "Security question",
+      "src": "ticket:tickets/registration-spec.md#AC2",
+      "group": "confirmed",
+      "how": "normalised",
+      "atlas_text": "Security Question",
+      "atlas_ref": "atlas:login-and-registration#User Registration"
+    },
+    {
+      "n": 7,
+      "line": 45,
+      "raw": "‹expected: Answer [src: ticket:tickets/registration-spec.md#AC2]›",
+      "text": "Answer",
+      "src": "ticket:tickets/registration-spec.md#AC2",
+      "group": "confirmed",
+      "how": "exact",
+      "atlas_text": "Answer",
+      "atlas_ref": "atlas:login-and-registration#User Registration"
+    },
+    {
+      "n": 8,
+      "line": 55,
+      "raw": "‹expected: Please provide an email address. [src: ticket:tickets/registration-spec.md#AC4]›",
+      "text": "Please provide an email address.",
+      "src": "ticket:tickets/registration-spec.md#AC4",
+      "group": "confirmed",
+      "how": "exact",
+      "atlas_text": "Please provide an email address.",
+      "atlas_ref": "atlas:login-and-registration#M1"
+    },
+    {
+      "n": 9,
+      "line": 65,
+      "raw": "‹expected: Email address is not valid. [src: ticket:tickets/registration-spec.md#AC3]›",
+      "text": "Email address is not valid.",
+      "src": "ticket:tickets/registration-spec.md#AC3",
+      "group": "confirmed",
+      "how": "exact",
+      "atlas_text": "Email address is not valid.",
+      "atlas_ref": "atlas:login-and-registration#M9"
+    },
+    {
+      "n": 10,
+      "line": 76,
+      "raw": "‹expected: Please provide a password [src: ticket:tickets/registration-spec.md#AC4]›",
+      "text": "Please provide a password",
+      "src": "ticket:tickets/registration-spec.md#AC4",
+      "group": "confirmed",
+      "how": "normalised",
+      "atlas_text": "Please provide a password.",
+      "atlas_ref": "atlas:login-and-registration#M2"
+    },
+    {
+      "n": 11,
+      "line": 86,
+      "raw": "‹expected: Password must be 8 to 40 characters. [src: ticket:tickets/registration-spec.md#AC5]›",
+      "text": "Password must be 8 to 40 characters.",
+      "src": "ticket:tickets/registration-spec.md#AC5",
+      "group": "different",
+      "how": "similar",
+      "atlas_text": "Password must be 5-40 characters long.",
+      "atlas_ref": "atlas:login-and-registration#User Registration",
+      "near": [
+        {
+          "text": "Password must be 5-40 characters long.",
+          "ref": "atlas:login-and-registration#User Registration",
+          "score": 0.67
+        },
+        {
+          "text": "Email must be unique",
+          "ref": "atlas:login-and-registration#M12",
+          "score": 0.4
+        }
+      ],
+      "review": {
+        "group": "different",
+        "atlas_text": "Password must be 5-40 characters long.",
+        "atlas_ref": "atlas:login-and-registration#M10",
+        "note": "The screen allows 5-40 characters (hint and message), the ticket says 8 to 40: which limit is right? TC-REG-006/007 use 7 and 8 characters and depend on the answer."
+      }
+    },
+    {
+      "n": 12,
+      "line": 116,
+      "raw": "‹expected: Passwords do not match [src: ticket:tickets/registration-spec.md#AC6]›",
+      "text": "Passwords do not match",
+      "src": "ticket:tickets/registration-spec.md#AC6",
+      "group": "confirmed",
+      "how": "exact",
+      "atlas_text": "Passwords do not match",
+      "atlas_ref": "atlas:login-and-registration#M11"
+    },
+    {
+      "n": 13,
+      "line": 126,
+      "raw": "‹expected: Please repeat your password. [src: ticket:tickets/registration-spec.md#AC6]›",
+      "text": "Please repeat your password.",
+      "src": "ticket:tickets/registration-spec.md#AC6",
+      "group": "confirmed",
+      "how": "exact",
+      "atlas_text": "Please repeat your password.",
+      "atlas_ref": "atlas:login-and-registration#M6"
+    },
+    {
+      "n": 14,
+      "line": 136,
+      "raw": "‹expected: Show password tips [src: ticket:tickets/registration-spec.md#AC7]›",
+      "text": "Show password tips",
+      "src": "ticket:tickets/registration-spec.md#AC7",
+      "group": "different",
+      "how": "similar",
+      "atlas_text": "Show password",
+      "atlas_ref": "atlas:login-and-registration#Login",
+      "near": [
+        {
+          "text": "Show password",
+          "ref": "atlas:login-and-registration#Login",
+          "score": 0.8
+        },
+        {
+          "text": "Show password advice",
+          "ref": "atlas:login-and-registration#User Registration",
+          "score": 0.67
+        },
+        {
+          "text": "Repeat Password",
+          "ref": "atlas:login-and-registration#User Registration",
+          "score": 0.4
+        }
+      ],
+      "review": {
+        "group": "different",
+        "atlas_text": "Show password advice",
+        "atlas_ref": "atlas:login-and-registration#User Registration",
+        "note": "The registration switch is labelled \"Show password advice\", the ticket says \"Show password tips\": change the screen, or update the ticket?"
+      }
+    },
+    {
+      "n": 15,
+      "line": 147,
+      "raw": "‹expected: Please choose a security question. [src: ticket:tickets/registration-spec.md#AC8]›",
+      "text": "Please choose a security question.",
+      "src": "ticket:tickets/registration-spec.md#AC8",
+      "group": "different",
+      "how": "similar",
+      "atlas_text": "Please select a security question.",
+      "atlas_ref": "atlas:login-and-registration#M7",
+      "near": [
+        {
+          "text": "Please select a security question.",
+          "ref": "atlas:login-and-registration#M7",
+          "score": 0.75
+        },
+        {
+          "text": "Security Question",
+          "ref": "atlas:login-and-registration#User Registration",
+          "score": 0.67
+        },
+        {
+          "text": "Please provide an answer to your security question.",
+          "ref": "atlas:login-and-registration#M8",
+          "score": 0.5
+        }
+      ],
+      "review": {
+        "group": "different",
+        "atlas_text": "Please select a security question.",
+        "atlas_ref": "atlas:login-and-registration#M7",
+        "note": "The screen says \"select\", the ticket says \"choose\": change the screen, or update the ticket?"
+      }
+    },
+    {
+      "n": 16,
+      "line": 157,
+      "raw": "‹expected: This cannot be changed later! [src: ticket:tickets/registration-spec.md#AC8]›",
+      "text": "This cannot be changed later!",
+      "src": "ticket:tickets/registration-spec.md#AC8",
+      "group": "confirmed",
+      "how": "exact",
+      "atlas_text": "This cannot be changed later!",
+      "atlas_ref": "atlas:login-and-registration#User Registration"
+    },
+    {
+      "n": 17,
+      "line": 167,
+      "raw": "‹expected: I accept the terms and conditions [src: ticket:tickets/registration-spec.md#AC9]›",
+      "text": "I accept the terms and conditions",
+      "src": "ticket:tickets/registration-spec.md#AC9",
+      "group": "not_found",
+      "near": [],
+      "review": {
+        "group": "not_found",
+        "note": "No terms-and-conditions checkbox exists on the registration screen; the form is valid without it, so TC-REG-014 cannot be run as written."
+      }
+    },
+    {
+      "n": 18,
+      "line": 168,
+      "raw": "‹expected: Create account [src: ticket:tickets/registration-spec.md#AC10]›",
+      "text": "Create account",
+      "src": "ticket:tickets/registration-spec.md#AC10",
+      "group": "not_found",
+      "near": [
+        {
+          "text": "Show/hide account menu",
+          "ref": "atlas:login-and-registration#Login",
+          "score": 0.33
+        }
+      ],
+      "review": {
+        "group": "different",
+        "atlas_text": "Register",
+        "atlas_ref": "atlas:login-and-registration#User Registration",
+        "note": "The registration button sends the form but is labelled \"Register\", not \"Create account\": change the screen, or update the ticket?"
+      }
+    },
+    {
+      "n": 19,
+      "line": 179,
+      "raw": "‹expected: I accept the terms and conditions [src: ticket:tickets/registration-spec.md#AC9]›",
+      "text": "I accept the terms and conditions",
+      "src": "ticket:tickets/registration-spec.md#AC9",
+      "group": "not_found",
+      "near": [],
+      "review": {
+        "group": "not_found",
+        "note": "No terms-and-conditions checkbox exists on the registration screen."
+      }
+    },
+    {
+      "n": 20,
+      "line": 180,
+      "raw": "‹expected: Create account [src: ticket:tickets/registration-spec.md#AC10]›",
+      "text": "Create account",
+      "src": "ticket:tickets/registration-spec.md#AC10",
+      "group": "not_found",
+      "near": [
+        {
+          "text": "Show/hide account menu",
+          "ref": "atlas:login-and-registration#Login",
+          "score": 0.33
+        }
+      ],
+      "review": {
+        "group": "different",
+        "atlas_text": "Register",
+        "atlas_ref": "atlas:login-and-registration#User Registration",
+        "note": "The registration button sends the form but is labelled \"Register\", not \"Create account\": change the screen, or update the ticket?"
+      }
+    },
+    {
+      "n": 21,
+      "line": 180,
+      "raw": "‹expected: Registration successful. Please log in. [src: ticket:tickets/registration-spec.md#AC12]›",
+      "text": "Registration successful. Please log in.",
+      "src": "ticket:tickets/registration-spec.md#AC12",
+      "group": "different",
+      "how": "similar",
+      "atlas_text": "Registration completed successfully. You can now log in.",
+      "atlas_ref": "atlas:login-and-registration#M13",
+      "near": [
+        {
+          "text": "Registration completed successfully. You can now log in.",
+          "ref": "atlas:login-and-registration#M13",
+          "score": 0.46
+        },
+        {
+          "text": "Log in with Passkey",
+          "ref": "atlas:login-and-registration#Login",
+          "score": 0.44
+        },
+        {
+          "text": "Log in with Google",
+          "ref": "atlas:login-and-registration#Login",
+          "score": 0.44
+        }
+      ],
+      "review": {
+        "group": "different",
+        "atlas_text": "Registration completed successfully. You can now log in.",
+        "atlas_ref": "atlas:login-and-registration#M13",
+        "note": "The success toast text differs from the ticket (\"Registration successful. Please log in.\"): change the screen, or update the ticket?"
+      }
+    },
+    {
+      "n": 22,
+      "line": 190,
+      "raw": "‹expected: Registration successful. Please log in. [src: ticket:tickets/registration-spec.md#AC12]›",
+      "text": "Registration successful. Please log in.",
+      "src": "ticket:tickets/registration-spec.md#AC12",
+      "group": "different",
+      "how": "similar",
+      "atlas_text": "Registration completed successfully. You can now log in.",
+      "atlas_ref": "atlas:login-and-registration#M13",
+      "near": [
+        {
+          "text": "Registration completed successfully. You can now log in.",
+          "ref": "atlas:login-and-registration#M13",
+          "score": 0.46
+        },
+        {
+          "text": "Log in with Passkey",
+          "ref": "atlas:login-and-registration#Login",
+          "score": 0.44
+        },
+        {
+          "text": "Log in with Google",
+          "ref": "atlas:login-and-registration#Login",
+          "score": 0.44
+        }
+      ],
+      "review": {
+        "group": "different",
+        "atlas_text": "Registration completed successfully. You can now log in.",
+        "atlas_ref": "atlas:login-and-registration#M13",
+        "note": "The success toast text differs from the ticket (\"Registration successful. Please log in.\"): change the screen, or update the ticket?"
+      }
+    },
+    {
+      "n": 23,
+      "line": 203,
+      "raw": "‹expected: Create account [src: ticket:tickets/registration-spec.md#AC10]›",
+      "text": "Create account",
+      "src": "ticket:tickets/registration-spec.md#AC10",
+      "group": "not_found",
+      "near": [
+        {
+          "text": "Show/hide account menu",
+          "ref": "atlas:login-and-registration#Login",
+          "score": 0.33
+        }
+      ],
+      "review": {
+        "group": "different",
+        "atlas_text": "Register",
+        "atlas_ref": "atlas:login-and-registration#User Registration",
+        "note": "The registration button sends the form but is labelled \"Register\", not \"Create account\": change the screen, or update the ticket?"
+      }
+    },
+    {
+      "n": 24,
+      "line": 203,
+      "raw": "‹expected: Email must be unique. [src: ticket:tickets/registration-spec.md#AC11]›",
+      "text": "Email must be unique.",
+      "src": "ticket:tickets/registration-spec.md#AC11",
+      "group": "confirmed",
+      "how": "normalised",
+      "atlas_text": "Email must be unique",
+      "atlas_ref": "atlas:login-and-registration#M12"
+    },
+    {
+      "n": 25,
+      "line": 214,
+      "raw": "‹expected: Create account [src: ticket:tickets/registration-spec.md#AC10]›",
+      "text": "Create account",
+      "src": "ticket:tickets/registration-spec.md#AC10",
+      "group": "not_found",
+      "near": [
+        {
+          "text": "Show/hide account menu",
+          "ref": "atlas:login-and-registration#Login",
+          "score": 0.33
+        }
+      ],
+      "review": {
+        "group": "different",
+        "atlas_text": "Register",
+        "atlas_ref": "atlas:login-and-registration#User Registration",
+        "note": "The registration button sends the form but is labelled \"Register\", not \"Create account\": change the screen, or update the ticket?"
+      }
+    },
+    {
+      "n": 26,
+      "line": 214,
+      "raw": "‹expected: Sign up with Google [src: ticket:tickets/registration-spec.md#AC10]›",
+      "text": "Sign up with Google",
+      "src": "ticket:tickets/registration-spec.md#AC10",
+      "group": "different",
+      "how": "similar",
+      "atlas_text": "Log in with Google",
+      "atlas_ref": "atlas:login-and-registration#Login",
+      "near": [
+        {
+          "text": "Log in with Google",
+          "ref": "atlas:login-and-registration#Login",
+          "score": 0.5
+        },
+        {
+          "text": "Log in with Passkey",
+          "ref": "atlas:login-and-registration#Login",
+          "score": 0.25
+        }
+      ],
+      "review": {
+        "group": "not_found",
+        "note": "No sign-up with Google button on the registration screen; \"Log in with Google\" exists only on the login screen."
+      }
+    }
+  ],
+  "counts": {
+    "total": 26,
+    "confirmed": 14,
+    "different": 6,
+    "not_found": 6
+  }
+}

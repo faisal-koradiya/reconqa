@@ -1,0 +1,812 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/faisal-koradiya/reconqa/kit.schema.json",
+  "title": "ReconQA kit",
+  "description": "Configuration for ReconQA. Plugin defaults, then .reconqa/kit.yml (team), then .reconqa/kit.local.yml (personal); later layers win. Never put secrets here.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "version"
+  ],
+  "properties": {
+    "version": {
+      "type": "integer",
+      "enum": [
+        1
+      ],
+      "description": "Config format version."
+    },
+    "app": {
+      "type": "object",
+      "additionalProperties": false,
+      "description": "The app under test.",
+      "properties": {
+        "url": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^https?://[^/?#@\\s]+([/?#]\\S*)?$",
+          "description": "Base URL of the app, e.g. http://localhost:3000. No user:password@ in URLs."
+        },
+        "target": {
+          "type": "string",
+          "enum": [
+            "web",
+            "android",
+            "api",
+            "mqtt",
+            "serial",
+            "desktop",
+            "ios"
+          ],
+          "description": "What kind of system is under test. web, android and api work today; the others are planned and are refused by the validator."
+        },
+        "environments": {
+          "type": "array",
+          "description": "Named environments. Writes to external tools are only allowed from environments with writes_allowed: true.",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "name"
+            ],
+            "properties": {
+              "name": {
+                "type": "string",
+                "minLength": 1
+              },
+              "url": {
+                "type": "string",
+                "pattern": "^https?://[^/?#@\\s]+([/?#]\\S*)?$"
+              },
+              "writes_allowed": {
+                "type": "boolean"
+              },
+              "kind": {
+                "type": "string",
+                "enum": [
+                  "local",
+                  "test",
+                  "staging",
+                  "production"
+                ],
+                "description": "What this environment is. Explore refuses to run against production."
+              }
+            }
+          }
+        },
+        "auth": {
+          "type": "object",
+          "additionalProperties": false,
+          "description": "How the agent gets past login. The agent never types or prints a password.",
+          "properties": {
+            "browser_state": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "description": "Path to a saved, pre-authenticated browser state file (gitignored).",
+              "pattern": "^(?![/\\\\])(?![A-Za-z]:)(?!(.*[/\\\\])?\\.\\.([/\\\\]|$))[^\\0]+$"
+            },
+            "test_accounts": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "description": "Allowlist of test account labels the agent may use. Empty = no login."
+            },
+            "on_mfa_prompt": {
+              "type": "string",
+              "enum": [
+                "stop"
+              ],
+              "description": "What to do when an MFA prompt appears."
+            }
+          }
+        },
+        "extra_origins": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^https?://[^/?#@\\s]+$"
+          },
+          "description": "Other origins the app itself calls from the browser (e.g. a separate API host). The browser may reach these too; nothing else."
+        },
+        "test_data": {
+          "type": "object",
+          "additionalProperties": false,
+          "description": "What the agent may create in the app under test while exploring.",
+          "properties": {
+            "allow_create": {
+              "type": "boolean",
+              "description": "May the agent create records (e.g. sign up a user, add an address)? Default false. Never allowed on production."
+            },
+            "prefix": {
+              "type": "string",
+              "pattern": "^[a-z0-9][a-z0-9-]{1,19}$",
+              "description": "Prefix on every name, email or title the agent creates, so test data is easy to find and clean up."
+            },
+            "email_domain": {
+              "type": "string",
+              "pattern": "^[a-z0-9.-]+\\.[a-z]{2,}$",
+              "description": "Domain for made-up email addresses. Default example.test (reserved, never delivers mail)."
+            }
+          }
+        },
+        "deny_actions": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Actions the app driver must never perform, even if asked (checked by effect, not label). Your list is added to the plugin's list; it can't remove defaults."
+        },
+        "android": {
+          "type": "object",
+          "additionalProperties": false,
+          "description": "Android app under test (app.target: android). The built-in driver touches only this device and this app.",
+          "properties": {
+            "device": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "pattern": "^[A-Za-z0-9._:-]+$",
+              "description": "Device serial from 'adb devices', e.g. emulator-5554. Required: the driver never picks a device on its own."
+            },
+            "package": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "pattern": "^[A-Za-z][A-Za-z0-9_]*(\\.[A-Za-z][A-Za-z0-9_]*)+$",
+              "description": "Package name of the test app, e.g. org.example.app."
+            },
+            "extra_packages": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "pattern": "^[A-Za-z][A-Za-z0-9_]*(\\.[A-Za-z][A-Za-z0-9_]*)+$"
+              },
+              "description": "Other packages the driver may tap in, e.g. the system permission dialog (com.google.android.permissioncontroller)."
+            },
+            "allow_real_device": {
+              "type": "boolean",
+              "description": "Allow a real phone (serial not emulator-NNNN). Use a test phone only."
+            },
+            "allow_reset": {
+              "type": "boolean",
+              "description": "Allow clearing the test app's data (asked every time)."
+            }
+          }
+        },
+        "api": {
+          "type": "object",
+          "additionalProperties": false,
+          "description": "API under test (app.target: api). The built-in driver only talks to base_url's server.",
+          "properties": {
+            "base_url": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "pattern": "^https?://[^/?#@\\s]+(/[^?#\\s]*)?$",
+              "description": "Base URL of the API, e.g. http://localhost:3001 or http://localhost:8080/api/v1. No user:password@."
+            },
+            "spec": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "description": "OpenAPI (3) or Swagger (2) file, JSON or simple YAML: a path in the project (docs/openapi.json) or a path on the API server (/openapi.json).",
+              "pattern": "^(?![\\\\])(?![A-Za-z]:)(?!(.*[/\\\\])?\\.\\.([/\\\\]|$))[^\\0]+$"
+            },
+            "token_env": {
+              "type": "string",
+              "pattern": "^[A-Z_][A-Z0-9_]*$",
+              "description": "Name of the environment variable that holds an API token (sent as Bearer). The token itself never goes in this file."
+            },
+            "login": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "path",
+                "body_env"
+              ],
+              "description": "Session login: ReconQA posts the listed fields, filled from environment variables, and keeps the session cookie.",
+              "properties": {
+                "path": {
+                  "type": "string",
+                  "pattern": "^/"
+                },
+                "method": {
+                  "type": "string",
+                  "enum": [
+                    "POST",
+                    "PUT"
+                  ]
+                },
+                "body_env": {
+                  "type": "object",
+                  "additionalProperties": {
+                    "type": "string",
+                    "pattern": "^[A-Z_][A-Z0-9_]*$"
+                  },
+                  "description": "Body field → environment variable name, e.g. {username: QA_API_USER, password: QA_API_PASSWORD}."
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "capabilities": {
+      "type": "object",
+      "additionalProperties": false,
+      "description": "Which tool provides each capability. tool: none = that capability is off and skills skip it.",
+      "properties": {
+        "tracker": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "tool": {
+              "type": "string",
+              "enum": [
+                "none",
+                "github-issues",
+                "jira"
+              ]
+            },
+            "server_prefix": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "pattern": "^mcp__",
+              "description": "MCP tool-name prefix for this server, e.g. mcp__github__."
+            },
+            "repo": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "pattern": "^[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+$",
+              "description": "owner/name for GitHub Issues."
+            },
+            "project": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "pattern": "^[A-Z][A-Z0-9_]{0,9}$",
+              "description": "Jira project key, e.g. QA. Writes go only to issues in this project."
+            },
+            "site": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "pattern": "^[A-Za-z0-9.:/_-]+$",
+              "description": "Jira only: the Atlassian site (cloudId, or the site host like yourteam.atlassian.net). Writes to other sites are denied."
+            }
+          }
+        },
+        "test_management": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "tool": {
+              "type": "string",
+              "enum": [
+                "none",
+                "csv",
+                "testrail"
+              ]
+            },
+            "path": {
+              "type": "string",
+              "pattern": "^(?![/\\\\])(?![A-Za-z]:)(?!(.*[/\\\\])?\\.\\.([/\\\\]|$))[^\\0]+$",
+              "description": "Relative path inside the project."
+            },
+            "base_url": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "pattern": "^https?://[^/?#@\\s]+(/[^?#\\s]*)?$",
+              "description": "TestRail address, e.g. https://yourteam.testrail.io (https, or localhost)."
+            },
+            "project_id": {
+              "type": "integer",
+              "minimum": 1,
+              "description": "TestRail project id (the number in the project's address)."
+            },
+            "suite_id": {
+              "type": "integer",
+              "minimum": 1,
+              "description": "Suite id, only for projects with several suites."
+            },
+            "section_id": {
+              "type": "integer",
+              "minimum": 1,
+              "description": "Section that new cases are added to."
+            },
+            "user_env": {
+              "type": "string",
+              "pattern": "^[A-Z_][A-Z0-9_]*$",
+              "description": "NAME of the environment variable with the TestRail user (email)."
+            },
+            "key_env": {
+              "type": "string",
+              "pattern": "^[A-Z_][A-Z0-9_]*$",
+              "description": "NAME of the environment variable with the TestRail API key. The key itself never goes in this file."
+            }
+          }
+        },
+        "docs": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "tool": {
+              "type": "string",
+              "enum": [
+                "none",
+                "local"
+              ]
+            },
+            "path": {
+              "type": "string",
+              "pattern": "^(?![/\\\\])(?![A-Za-z]:)(?!(.*[/\\\\])?\\.\\.([/\\\\]|$))[^\\0]+$",
+              "description": "Relative path inside the project."
+            }
+          }
+        },
+        "comms": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "tool": {
+              "type": "string",
+              "enum": [
+                "none",
+                "markdown"
+              ]
+            },
+            "path": {
+              "type": "string",
+              "pattern": "^(?![/\\\\])(?![A-Za-z]:)(?!(.*[/\\\\])?\\.\\.([/\\\\]|$))[^\\0]+$",
+              "description": "Relative path inside the project."
+            }
+          }
+        },
+        "app_driver": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "tool": {
+              "type": "string",
+              "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$",
+              "description": "Which tool drives the app: playwright (default, its own clean browser), claude-in-chrome (your own Chrome window through the Claude in Chrome extension), none, or the name of any tool map you added in adapters/app/<name>.json."
+            },
+            "server_prefix": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "pattern": "^mcp__"
+            }
+          }
+        }
+      }
+    },
+    "output": {
+      "type": "object",
+      "additionalProperties": false,
+      "description": "Where ReconQA writes its files, relative to the project root.",
+      "properties": {
+        "atlas": {
+          "type": "string",
+          "pattern": "^(?![/\\\\])(?![A-Za-z]:)(?!(.*[/\\\\])?\\.\\.([/\\\\]|$))[^\\0]+$",
+          "description": "Relative path inside the project."
+        },
+        "cases": {
+          "type": "string",
+          "pattern": "^(?![/\\\\])(?![A-Za-z]:)(?!(.*[/\\\\])?\\.\\.([/\\\\]|$))[^\\0]+$",
+          "description": "Relative path inside the project."
+        },
+        "bugs": {
+          "type": "string",
+          "pattern": "^(?![/\\\\])(?![A-Za-z]:)(?!(.*[/\\\\])?\\.\\.([/\\\\]|$))[^\\0]+$",
+          "description": "Relative path inside the project."
+        },
+        "reports": {
+          "type": "string",
+          "pattern": "^(?![/\\\\])(?![A-Za-z]:)(?!(.*[/\\\\])?\\.\\.([/\\\\]|$))[^\\0]+$",
+          "description": "Relative path inside the project."
+        },
+        "runs": {
+          "type": "string",
+          "pattern": "^(?![/\\\\])(?![A-Za-z]:)(?!(.*[/\\\\])?\\.\\.([/\\\\]|$))[^\\0]+$",
+          "description": "Relative path inside the project."
+        },
+        "kb": {
+          "type": "string",
+          "pattern": "^(?![/\\\\])(?![A-Za-z]:)(?!(.*[/\\\\])?\\.\\.([/\\\\]|$))[^\\0]+$",
+          "description": "Feature knowledge base folder (index.md + one folder per feature). Relative path inside the project."
+        },
+        "sources": {
+          "type": "string",
+          "pattern": "^(?![/\\\\])(?![A-Za-z]:)(?!(.*[/\\\\])?\\.\\.([/\\\\]|$))[^\\0]+$",
+          "description": "Where imported manuals and old test cases are kept (copied once, then cited). Relative path inside the project."
+        },
+        "language": {
+          "type": "string",
+          "pattern": "^[a-z]{2}(-[A-Z]{2})?$"
+        },
+        "commit_screenshots": {
+          "type": "boolean",
+          "description": "false = atlas screenshots are gitignored."
+        }
+      }
+    },
+    "kb": {
+      "type": "object",
+      "additionalProperties": false,
+      "description": "Feature knowledge base settings.",
+      "properties": {
+        "token_cap": {
+          "type": "integer",
+          "minimum": 500,
+          "maximum": 50000,
+          "description": "Most tokens (estimated as characters / 4) a feature's decisions.md + known-issues.md may hold; each overview.md has the same cap. Skills load these files by default, so this bounds the cost per ticket."
+        }
+      }
+    },
+    "explore": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "token_budget": {
+          "type": "integer",
+          "minimum": 10000,
+          "description": "Stop exploring an area after roughly this many tokens."
+        },
+        "max_steps": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "screenshots": {
+          "type": "string",
+          "enum": [
+            "evidence-only",
+            "every-screen",
+            "none"
+          ]
+        },
+        "settle_ms": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Wait after a dialog opens before capturing it."
+        }
+      }
+    },
+    "cases": {
+      "type": "object",
+      "additionalProperties": false,
+      "description": "Test case style.",
+      "properties": {
+        "format": {
+          "type": "string",
+          "enum": [
+            "steps-table",
+            "gherkin",
+            "checklist"
+          ]
+        },
+        "required_fields": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "id",
+              "title",
+              "preconditions",
+              "steps",
+              "expected",
+              "priority",
+              "type",
+              "refs",
+              "test_data"
+            ]
+          },
+          "description": "Fields every case must have; checked by scripts/check-cases.mjs."
+        },
+        "id_pattern": {
+          "type": "string",
+          "description": "e.g. TC-{area}-{n:03}"
+        },
+        "priority_scale": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1
+        },
+        "max_steps": {
+          "type": "integer",
+          "minimum": 1,
+          "description": "Most steps (table rows) one case may have."
+        },
+        "max_expected": {
+          "type": "integer",
+          "minimum": 1,
+          "description": "Most sentences one Expected cell may have."
+        },
+        "step_numbers_in_expected": {
+          "type": "boolean",
+          "description": "false = an expected result may not refer to a step number (\"as in step 2\")."
+        },
+        "release_label_in_text": {
+          "type": "boolean"
+        },
+        "unseen_text": {
+          "type": "string",
+          "enum": [
+            "generic",
+            "ask"
+          ],
+          "description": "UI text not in the atlas: write generic wording, or ask. Never guess."
+        },
+        "skip_unrunnable": {
+          "type": "boolean",
+          "description": "Skip cases a tester can't run through normal UI/test setup; flag borderline ones."
+        },
+        "add_new_on_update": {
+          "type": "boolean",
+          "description": "When updating existing cases, add new ones only if true."
+        },
+        "ui_string_markup": {
+          "type": "string",
+          "enum": [
+            "guillemets",
+            "double-quotes"
+          ],
+          "description": "How exact UI strings are marked so the grounding check can verify them: guillemets = «text» (default; never clashes with quotes copied from a ticket), double-quotes = \"text\"."
+        }
+      }
+    },
+    "run": {
+      "type": "object",
+      "additionalProperties": false,
+      "description": "How /reconqa:run-cases runs written cases in the browser.",
+      "properties": {
+        "screenshots": {
+          "type": "string",
+          "enum": [
+            "failures",
+            "every-step"
+          ],
+          "description": "failures = a screenshot only for failed or blocked steps."
+        },
+        "max_cases": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 200,
+          "description": "Best effort: ask before running more cases than this in one run."
+        },
+        "recheck_failures": {
+          "type": "boolean",
+          "description": "Repeat a failed step once before recording it as failed."
+        },
+        "stop_after_failures": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "0 = never stop early; n = stop the run after n failed cases."
+        }
+      }
+    },
+    "bugs": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "fields": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "severity_scale": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1
+        },
+        "labels": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "required_evidence": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "steps",
+              "expected",
+              "actual",
+              "screenshot",
+              "version",
+              "environment",
+              "console-errors"
+            ]
+          }
+        },
+        "version_source": {
+          "type": "string",
+          "enum": [
+            "live"
+          ],
+          "description": "Read the app version live at filing time; never reuse an old value."
+        }
+      }
+    },
+    "tracker_policy": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "assignee": {
+          "type": "string",
+          "enum": [
+            "never",
+            "allowed"
+          ]
+        },
+        "filing": {
+          "type": "string",
+          "enum": [
+            "draft-only",
+            "file-after-approval"
+          ]
+        },
+        "verify_cited_ids": {
+          "type": "boolean"
+        }
+      }
+    },
+    "words": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "banned": {
+          "type": "array",
+          "description": "Words never to use in outputs, with the replacement to use instead.",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "word"
+            ],
+            "properties": {
+              "word": {
+                "type": "string",
+                "minLength": 1
+              },
+              "use": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "whole_word": {
+                "type": "boolean"
+              }
+            }
+          }
+        },
+        "glossary": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          },
+          "description": "Team terms and what they mean."
+        }
+      }
+    },
+    "rules": {
+      "type": "array",
+      "description": "Team rules. Structured checks are enforced by the case checker; text-only rules are best effort.",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "text"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[a-z0-9][a-z0-9-]*$"
+          },
+          "scope": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "enum": [
+                "explore",
+                "write-cases",
+                "run-cases",
+                "draft-bug",
+                "all"
+              ]
+            }
+          },
+          "text": {
+            "type": "string",
+            "minLength": 1
+          },
+          "check": {
+            "type": "object",
+            "additionalProperties": false,
+            "description": "Optional machine check: the case checker fails when `pattern` matches (must_not_match) or doesn't match (must_match) in `field`.",
+            "properties": {
+              "field": {
+                "type": "string",
+                "enum": [
+                  "title",
+                  "preconditions",
+                  "steps",
+                  "expected",
+                  "any"
+                ]
+              },
+              "must_not_match": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 200,
+                "description": "A regular expression (max 200 chars, no nested repeats)."
+              },
+              "must_match": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 200,
+                "description": "A regular expression (max 200 chars, no nested repeats)."
+              },
+              "ignore_case": {
+                "type": "boolean"
+              }
+            }
+          }
+        }
+      }
+    },
+    "guardrails": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "require_approval": {
+          "type": "boolean",
+          "enum": [
+            true
+          ],
+          "description": "Writes to external tools need a dry run the user approves. Always on."
+        },
+        "deny_deletes": {
+          "type": "boolean",
+          "enum": [
+            true
+          ],
+          "description": "Delete operations on external tools are blocked. Always on in v0.1."
+        },
+        "deny_shell_tracker_writes": {
+          "type": "boolean",
+          "enum": [
+            true
+          ],
+          "description": "Tracker writes through shell commands are blocked. Always on in v0.1."
+        }
+      }
+    }
+  }
+}

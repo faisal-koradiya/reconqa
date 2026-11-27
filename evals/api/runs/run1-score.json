@@ -1,0 +1,10 @@
+{
+  "_about": "Hand score of run 1 against evals/api/rwa/planted.json.",
+  "planted_found": ["P1", "P2", "P3", "P4"],
+  "planted_not_tested": { "P5": "DELETE is asked by the gate; a headless run cannot approve it, so the explorer recorded it as not probed (correct behaviour)" },
+  "false_conflicts": 0,
+  "correct_claims_confirmed": ["C2", "C3"],
+  "correct_claims_not_probed": ["C1 (stayed logged in)", "C4 (no malformed id tried; 'does-not-exist' is a valid id shape)"],
+  "extra_true_findings": ["list returns soft-deleted records (isDeleted: true)", "empty strings accepted for all three fields", "account numbers returned unmasked", "OPTIONS answers 204"],
+  "records_left": "8 bank accounts (6 with the reconqa prefix); delete not approved in a headless run"
+}

@@ -1,0 +1,50 @@
+{
+  "_about": "Tool map for the GitHub MCP server, used by the write gate. Any tool on the tracker server that is not listed here is denied. Checked against github-mcp-server v2.1.0 (tools/list, 2026-11-26); older per-action names kept for older servers.",
+  "default_prefix": "mcp__github__",
+  "repo_fields": {
+    "owner": "owner",
+    "name": "repo"
+  },
+  "assignee_fields": [
+    "assignee",
+    "assignees"
+  ],
+  "reads": [
+    "get_issue",
+    "list_issues",
+    "search_issues",
+    "get_issue_comments",
+    "issue_read",
+    "get_me",
+    "list_labels",
+    "get_label",
+    "search_repositories",
+    "get_file_contents",
+    "list_issue_fields",
+    "list_issue_types"
+  ],
+  "writes": [
+    "create_issue",
+    "update_issue",
+    "add_issue_comment",
+    "issue_write",
+    "update_issue_comment",
+    "sub_issue_write"
+  ],
+  "deletes": [
+    "delete_issue",
+    "delete_issue_comment",
+    "remove_sub_issue",
+    "delete_file"
+  ],
+  "write_methods_field": "method",
+  "delete_like": [
+    {
+      "field": "state",
+      "values": [
+        "closed"
+      ]
+    }
+  ],
+  "tested_with": "github-mcp-server v2.1.0"
+}

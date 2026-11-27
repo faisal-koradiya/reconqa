@@ -1,0 +1,6 @@
+{
+  "cmd": "/reconqa:write-cases tickets/recurring-bills.md --pre-ui (atlas hidden, copy of this project)",
+  "secs": 88,
+  "cost_usd": 0.3386,
+  "result": "13 pre-UI cases, 11 ‹expected› texts, 0 «», check-cases 0 problems"
+}

@@ -1,0 +1,29 @@
+{
+  "description": "ReconQA write gate: tracker writes are asked with the payload shown, deletes and shell routes are blocked, approval state is hook-only. Fails closed.",
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "mcp__.*|Bash|PowerShell|Write|Edit|MultiEdit|NotebookEdit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "command -v node >/dev/null 2>&1 || exit 0; node \"${CLAUDE_PLUGIN_ROOT}/hooks/gate.mjs\" || exit 2",
+            "timeout": 10
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "mcp__.*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node \"${CLAUDE_PLUGIN_ROOT}/hooks/record.mjs\"",
+            "timeout": 10
+          }
+        ]
+      }
+    ]
+  }
+}
